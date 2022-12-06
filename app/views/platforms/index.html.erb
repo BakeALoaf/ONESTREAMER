@@ -1,6 +1,16 @@
 <div class="platforms-container">
   <h1 class="platform-title">Choose your platforms</h1>
 
+    <form action="/movies" method="get">
+    <div class="platform-grid">
+      <% @platforms.each do |platform| %>
+        <label for="<%= platform.name %>" class="platform-bordered mb-1">
+          <input class="grid-icon" type="checkbox" value="<%= platform.name %>" name="<%= platform.name %>">
+        </label>
+      <% end %>
+    </div>
+    </form>
+
     <div class="platforms">
       <div>
         <img class="platform-bordered mb-1" src="https://venturebeat.com/wp-content/uploads/2016/06/netflix-logo.png?fit=750%2C750&strip=all" />
