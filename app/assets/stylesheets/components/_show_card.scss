@@ -1,0 +1,19 @@
+.show_container {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  background-color: rgb(41, 41, 41);
+}
+
+.show_card {
+
+
+}
+
+.image_preview_container {
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+}
+.image_preview {
+  background-image: url("IMAGE LOCATION");
+}
