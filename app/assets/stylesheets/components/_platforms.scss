@@ -1,0 +1,42 @@
+.platforms-container{
+  margin:0 auto;
+  width: 350px;
+  // flex-direction: column;
+  text-align: center;
+
+}
+
+.platform-title{
+
+}
+
+.platforms{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.platform-bordered {
+  width: 80px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: rgb(68, 68, 68) 6px solid;
+}
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  display: block;
+  width: 100px;
+  margin: 10px auto;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
