@@ -1,0 +1,10 @@
+<h1>Index of Movies</h1>
+<% @movies.each do |movie| %>
+  <%= movie.name %>
+  <%= movie.description %>
+  <%= movie.imdb_rating %>
+  <%= movie.image_url %>
+  <%= movie.release_date %>
+  <%= movie.genre %>
+  <%= movie.age_rating %>
+<% end %>
