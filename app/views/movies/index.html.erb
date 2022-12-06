@@ -1,16 +1,18 @@
 <div class="container">
 
-  <% if movies.platforms.name == netflix %>
     <div class="carousel">
       <% @movies.each do |movie| %>
+        <% if movie.platform == "Netflix" %>
         <div class="movie-card">
           <%= movie.name %>
           <%= movie.imdb_rating %>
           <%= movie.image_url %>
         </div>
+        <% end %>
       <% end %>
     </div>
-  <% end %>
+
+    # the rest need to match the above layout #
 
    <%# if movies.platforms.name == amazonprime %>
     <%# <div class="carousel"> %>
