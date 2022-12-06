@@ -1,10 +1,99 @@
-<h1>Index of Movies</h1>
-<% @movies.each do |movie| %>
-  <%= movie.name %>
-  <%= movie.description %>
-  <%= movie.imdb_rating %>
-  <%= movie.image_url %>
-  <%= movie.release_date %>
-  <%= movie.genre %>
-  <%= movie.age_rating %>
-<% end %>
+<div class="container">
+
+  <% if movies.platforms.name == netflix %>
+    <div class="carousel">
+      <% @movies.each do |movie| %>
+        <div class="movie-card">
+          <%= movie.name %>
+          <%= movie.imdb_rating %>
+          <%= movie.image_url %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+   <%# if movies.platforms.name == amazonprime %>
+    <%# <div class="carousel"> %>
+      <%# @movies.each do |movie| %>
+        <%# <div class="movie-card"> %>
+          <%#= movie.name %>
+          <%#= movie.imdb_rating %>
+          <%#= movie.image_url %>
+        <%# </div> %>
+      <%# end %>
+    <%# </div> %>
+  <%# end %>
+
+  <%# if movies.platforms.name == disneyplus %>
+    <%# <div class="carousel"> %>
+      <%# @movies.each do |movie| %>
+        <%# <div class="movie-card"> %>
+          <%#= movie.name %>
+          <%#= movie.imdb_rating %>
+          <%#= movie.image_url %>
+        <%# </div> %>
+      <%# end %>
+    <%# </div> %>
+  <%# end %>
+
+  <%# if movies.platforms.name == appletv %>
+    <%# <div class="carousel"> %>
+      <%# @movies.each do |movie| %>
+        <%# <div class="movie-card"> %>
+          <%#= movie.name %>
+          <%#= movie.imdb_rating %>
+          <%#= movie.image_url %>
+        <%# </div> %>
+      <%# end %>
+    <%# </div> %>
+  <%# end %>
+
+ <%# if movies.platforms.name == now %>
+    <%# <div class="carousel"> %>
+      <%# @movies.each do |movie| %>
+        <%# <div class="movie-card"> %>
+          <%#= movie.name %>
+          <%#= movie.imdb_rating %>
+          <%#= movie.image_url %>
+        <%# </div> %>
+      <%# end %>
+    <%# </div> %>
+  <%# end %>
+
+  <%# if movies.platforms.name == four %>
+    <%# <div class="carousel"> %>
+      <%# @movies.each do |movie| %>
+        <%# <div class="movie-card"> %>
+          <%#= movie.name %>
+          <%#= movie.imdb_rating %>
+          <%#= movie.image_url %>
+        <%# </div> %>
+      <%# end %>
+    <%# </div> %>
+  <%# end %>
+
+ <%# if movies.platforms.name == iplayer %>
+    <%# <div class="carousel"> %>
+      <%# @movies.each do |movie| %>
+        <%# <div class="movie-card"> %>
+          <%#= movie.name %>
+          <%#= movie.imdb_rating %>
+          <%#= movie.image_url %>
+        <%# </div> %>
+      <%# end %>
+    <%# </div> %>
+  <%# end %>
+
+  <%# if movies.platforms.name == britbox %>
+    <%# <div class="carousel"> %>
+      <%# @movies.each do |movie| %>
+        <%# <div class="movie-card"> %>
+          <%#= movie.name %>
+          <%#= movie.imdb_rating %>
+          <%#= movie.image_url %>
+        <%# </div> %>
+      <%# end %>
+    <%# </div> %>
+  <%# end %>
+
+</div>
