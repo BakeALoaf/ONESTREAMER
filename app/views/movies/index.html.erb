@@ -12,9 +12,7 @@
       <% end %>
     </div>
 
-    # the rest need to match the above layout #
-
-   <%# if movies.platforms.name == amazonprime %>
+   <%# if @movies.platforms.name == "Amazon Prime" %>
     <%# <div class="carousel"> %>
       <%# @movies.each do |movie| %>
         <%# <div class="movie-card"> %>
@@ -26,7 +24,7 @@
     <%# </div> %>
   <%# end %>
 
-  <%# if movies.platforms.name == disneyplus %>
+  <%# if @movies.platforms.name == "Disney +" %>
     <%# <div class="carousel"> %>
       <%# @movies.each do |movie| %>
         <%# <div class="movie-card"> %>
@@ -38,7 +36,7 @@
     <%# </div> %>
   <%# end %>
 
-  <%# if movies.platforms.name == appletv %>
+  <%# if @movies.platforms.name == "Apple TV" %>
     <%# <div class="carousel"> %>
       <%# @movies.each do |movie| %>
         <%# <div class="movie-card"> %>
@@ -50,7 +48,7 @@
     <%# </div> %>
   <%# end %>
 
- <%# if movies.platforms.name == now %>
+ <%# if @movies.platforms.name == "NOW TV" %>
     <%# <div class="carousel"> %>
       <%# @movies.each do |movie| %>
         <%# <div class="movie-card"> %>
@@ -62,7 +60,7 @@
     <%# </div> %>
   <%# end %>
 
-  <%# if movies.platforms.name == four %>
+  <%# if @movies.platforms.name == "ALL 4" %>
     <%# <div class="carousel"> %>
       <%# @movies.each do |movie| %>
         <%# <div class="movie-card"> %>
@@ -74,7 +72,7 @@
     <%# </div> %>
   <%# end %>
 
- <%# if movies.platforms.name == iplayer %>
+ <%# if @movies.platforms.name == "BBC iPlayer" %>
     <%# <div class="carousel"> %>
       <%# @movies.each do |movie| %>
         <%# <div class="movie-card"> %>
@@ -86,7 +84,7 @@
     <%# </div> %>
   <%# end %>
 
-  <%# if movies.platforms.name == britbox %>
+  <%# if @movies.platforms.name == "britbox" %>
     <%# <div class="carousel"> %>
       <%# @movies.each do |movie| %>
         <%# <div class="movie-card"> %>
