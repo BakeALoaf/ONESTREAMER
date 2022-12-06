@@ -9,7 +9,11 @@
 
 // Your CSS partials
 @import "components/index";
+
+@import "components/platforms";
+
 @import "components/moviecards";
 @import "components/carousel";
+
 @import "pages/index";
 @import "components/show_card"

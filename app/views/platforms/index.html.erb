@@ -1,0 +1,44 @@
+<div class="platforms-container">
+  <h1 class="platform-title">Choose your platforms</h1>
+
+    <form action="/movies" method="get">
+    <div class="platform-grid">
+      <% @platforms.each do |platform| %>
+        <label for="<%= platform.name %>" class="platform-bordered mb-1">
+          <input class="grid-icon" type="checkbox" value="<%= platform.name %>" name="<%= platform.name %>">
+        </label>
+      <% end %>
+    </div>
+    </form>
+
+    <div class="platforms">
+      <div>
+        <img class="platform-bordered mb-1" src="https://venturebeat.com/wp-content/uploads/2016/06/netflix-logo.png?fit=750%2C750&strip=all" />
+      </div>
+      <div>
+        <img class="platform-bordered mb-1" src="https://pbs.twimg.com/profile_images/1589591296057843713/RFeVpNYj_400x400.jpg" />
+      </div>
+      <div>
+        <img class="platform-bordered mb-1" src="https://i.pinimg.com/736x/f2/d3/db/f2d3dbee26e933ee8a40c6d3d01cb2d9.jpg" />
+      </div>
+      <div>
+        <img class="platform-bordered mb-1" src="https://play-lh.googleusercontent.com/zovfDsfyegE7SF3hCrN_hWPiQ2VLSh_Hreg20YsgQD5d9rfeq_HLA1fdq3q9zn-QNg" />
+      </div>
+      <div>
+        <img class="platform-bordered mb-1" src="https://www.ispreview.co.uk/wp-content/uploads/2021/03/nggallery_import/NOW_Logo_Broadband_and_TV_2021.jpg" />
+      </div>
+      <div>
+        <img class="platform-bordered mb-1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Channel_4_logo_1999.svg/1024px-Channel_4_logo_1999.svg.png" />
+      </div>
+      <div>
+        <img class="platform-bordered mb-1" src="https://www.increasebroadbandspeed.co.uk/wp-content/uploads/2020/01/BBC-iPlayer-Logo.png" />
+      </div>
+      <div>
+        <img class="platform-bordered mb-1" src="https://up.metropol247.co.uk/Moz/britbox_black.png" />
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-ghost" href="#">Save</a>
+    </div>
+  </div>
+</div>
