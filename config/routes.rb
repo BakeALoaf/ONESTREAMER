@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :platforms, only: %i[index]
 
-
-  resources :movies, only: %i[index show]
-
+  resources :movies, only: %i[index show] do
+    resources :favourite_movies, only: %i[create]
+  end
+  resources :favourite_movies, only: %i[index]
 end

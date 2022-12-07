@@ -3,11 +3,12 @@
     <div class="carousel">
       <% @movies.each do |movie| %>
         <% if movie.platform == "Netflix" %>
-        <div class="movie-card">
-          <%= movie.name %>
-          <%= movie.imdb_rating %>
-          <%= movie.image_url %>
-        </div>
+          <div class="movie-card">
+            <%= movie.name %>
+            <%= movie.imdb_rating %>
+            <%= movie.image_url %>
+            <%= link_to "add favourite", movie_favourite_movies_path(movie), data: { "turbo-method": :post }%>
+          </div>
         <% end %>
       <% end %>
     </div>
