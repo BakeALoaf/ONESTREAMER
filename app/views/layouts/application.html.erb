@@ -3,6 +3,8 @@
   <head>
     <title>ONESTREAMER</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,9 +12,10 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body><%= render "shared/navbar" %>
+  <body>
 <%= render "shared/flashes" %>
 
     <%= yield %>
+<%= render "shared/navbar" %>
   </body>
 </html>
