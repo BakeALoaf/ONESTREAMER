@@ -2,17 +2,21 @@
   <div class="show_card">
     <div class="image_container">
       <img src="<%= @movie.image_url %>">
+      <div class="show_title">
+        <h3><%= @movie.name %></h3>
+      </div>
     </div>
 
     <div class="text_container">
-      <div class="show_title">
-        <h1><%= @movie.name %></h1>
+      <h6><%= @movie.description %></h6>
+      <div class="movie_info">
+        <div>
+          <i class="fa-brands fa-imdb"></i><%= @movie.imdb_rating %>
+        </div>
+        <div>
+          <%= @movie.release_date %>
+        </div>
       </div>
-      <%= @movie.description %>
-      <%= @movie.imdb_rating %>
-      <%= @movie.release_date %>
-      <%= @movie.genre %>
-      <%= @movie.age_rating %>
     </div>
   </div>
 </div>
