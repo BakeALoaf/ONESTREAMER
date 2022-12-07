@@ -1,99 +1,85 @@
-<div class="container">
 
-    <div class="carousel">
-      <% @movies.each do |movie| %>
-        <% if movie.platform == "Netflix" %>
-        <div class="movie-card">
-          <%= movie.name %>
-          <%= movie.imdb_rating %>
-          <%= movie.image_url %>
-        </div>
-        <% end %>
-      <% end %>
-    </div>
 
-   <%# if @movies.platforms.name == "Amazon Prime" %>
-    <%# <div class="carousel"> %>
-      <%# @movies.each do |movie| %>
-        <%# <div class="movie-card"> %>
-          <%#= movie.name %>
-          <%#= movie.imdb_rating %>
-          <%#= movie.image_url %>
-        <%# </div> %>
-      <%# end %>
-    <%# </div> %>
-  <%# end %>
+<div class="app">
 
-  <%# if @movies.platforms.name == "Disney +" %>
-    <%# <div class="carousel"> %>
-      <%# @movies.each do |movie| %>
-        <%# <div class="movie-card"> %>
-          <%#= movie.name %>
-          <%#= movie.imdb_rating %>
-          <%#= movie.image_url %>
-        <%# </div> %>
-      <%# end %>
-    <%# </div> %>
-  <%# end %>
+      <div class="scrolling-wrapper">
+          <% @movies.each_with_index do |movie, index| %>
+            <% active = index == 0 ? "active" : "" %>
+              <% if movie.platform == "Netflix" %>
+                    <a href='<%= movie_path(movie)%>' class="movie-card">
+                      <img src="<%= movie.image_url %>" alt="img">
+                    </a>
+              <% end %>
+            <% end %>
+      </div>
 
-  <%# if @movies.platforms.name == "Apple TV" %>
-    <%# <div class="carousel"> %>
-      <%# @movies.each do |movie| %>
-        <%# <div class="movie-card"> %>
-          <%#= movie.name %>
-          <%#= movie.imdb_rating %>
-          <%#= movie.image_url %>
-        <%# </div> %>
-      <%# end %>
-    <%# </div> %>
-  <%# end %>
+      <div class="scrolling-wrapper">
+          <% @movies.each_with_index do |movie, index| %>
+            <% active = index == 0 ? "active" : "" %>
+              <% if movie.platform == "Amazon Prime" %>
+                    <a href='<%= movie_path(movie)%>' class="movie-card">
+                      <img src="<%= movie.image_url %>" alt="img">
+                    </a>
+              <% end %>
+            <% end %>
+      </div>
 
- <%# if @movies.platforms.name == "NOW TV" %>
-    <%# <div class="carousel"> %>
-      <%# @movies.each do |movie| %>
-        <%# <div class="movie-card"> %>
-          <%#= movie.name %>
-          <%#= movie.imdb_rating %>
-          <%#= movie.image_url %>
-        <%# </div> %>
-      <%# end %>
-    <%# </div> %>
-  <%# end %>
+      <div class="scrolling-wrapper">
+          <% @movies.each_with_index do |movie, index| %>
+            <% active = index == 0 ? "active" : "" %>
+              <% if movie.platform == "Apple TV" %>
+                    <a href='<%= movie_path(movie)%>' class="movie-card">
+                      <img src="<%= movie.image_url %>" alt="img">
+                    </a>
+              <% end %>
+            <% end %>
+      </div>
 
-  <%# if @movies.platforms.name == "ALL 4" %>
-    <%# <div class="carousel"> %>
-      <%# @movies.each do |movie| %>
-        <%# <div class="movie-card"> %>
-          <%#= movie.name %>
-          <%#= movie.imdb_rating %>
-          <%#= movie.image_url %>
-        <%# </div> %>
-      <%# end %>
-    <%# </div> %>
-  <%# end %>
+      <div class="scrolling-wrapper">
+          <% @movies.each_with_index do |movie, index| %>
+            <% active = index == 0 ? "active" : "" %>
+              <% if movie.platform == "NOW TV" %>
+                    <a href='<%= movie_path(movie)%>' class="movie-card">
+                      <img src="<%= movie.image_url %>" alt="img">
+                    </a>
+              <% end %>
+            <% end %>
+      </div>
 
- <%# if @movies.platforms.name == "BBC iPlayer" %>
-    <%# <div class="carousel"> %>
-      <%# @movies.each do |movie| %>
-        <%# <div class="movie-card"> %>
-          <%#= movie.name %>
-          <%#= movie.imdb_rating %>
-          <%#= movie.image_url %>
-        <%# </div> %>
-      <%# end %>
-    <%# </div> %>
-  <%# end %>
+      <div class="scrolling-wrapper">
+          <% @movies.each_with_index do |movie, index| %>
+            <% active = index == 0 ? "active" : "" %>
+              <% if movie.platform == "ALL 4" %>
+                    <a href='<%= movie_path(movie)%>' class="movie-card">
+                      <img src="<%= movie.image_url %>" alt="img">
+                    </a>
+              <% end %>
+            <% end %>
+      </div>
 
-  <%# if @movies.platforms.name == "britbox" %>
-    <%# <div class="carousel"> %>
-      <%# @movies.each do |movie| %>
-        <%# <div class="movie-card"> %>
-          <%#= movie.name %>
-          <%#= movie.imdb_rating %>
-          <%#= movie.image_url %>
-        <%# </div> %>
-      <%# end %>
-    <%# </div> %>
-  <%# end %>
+       <div class="scrolling-wrapper">
+          <% @movies.each_with_index do |movie, index| %>
+            <% active = index == 0 ? "active" : "" %>
+              <% if movie.platform == "BBC iPlayer" %>
+                    <a href='<%= movie_path(movie)%>' class="movie-card">
+                      <img src="<%= movie.image_url %>" alt="img">
+                    </a>
+              <% end %>
+            <% end %>
+      </div>
+
+          <div class="scrolling-wrapper">
+          <% @movies.each_with_index do |movie, index| %>
+            <% active = index == 0 ? "active" : "" %>
+              <% if movie.platform == "britbox" %>
+                    <a href='<%= movie_path(movie)%>' class="movie-card">
+                      <img src="<%= movie.image_url %>" alt="img">
+                    </a>
+              <% end %>
+            <% end %>
+      </div>
+
+
+
 
 </div>
