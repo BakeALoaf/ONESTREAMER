@@ -8,7 +8,7 @@
 require 'open-uri'
 require 'net/http'
 require 'openssl'
-require  'json'
+require 'json'
 
 
 type = "movie"
