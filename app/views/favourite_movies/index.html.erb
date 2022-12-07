@@ -1,0 +1,6 @@
+<h1>Favourite Movies</h1>
+<% @favourite_movies.each do |fav| %>
+  <%= fav.movie.name %>
+  <%= fav.movie.imdb_rating %>
+  <%= fav.movie.image_url %> <br>
+<% end %>
