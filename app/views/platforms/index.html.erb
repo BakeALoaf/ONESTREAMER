@@ -1,44 +1,49 @@
 <div class="platforms-container">
   <h1 class="platform-title">Choose your platforms</h1>
 
-    <form action="/movies" method="get">
-    <div class="platform-grid">
-      <% @platforms.each do |platform| %>
-        <label for="<%= platform.name %>" class="platform-bordered mb-1">
-          <input class="grid-icon" type="checkbox" value="<%= platform.name %>" name="<%= platform.name %>">
-        </label>
+
+<% @platforms.each do |platform| %>
+  <%= simple_form_for @favourite_platform do |f| %>
+      <%= f.hidden :name, value: platform.name do %>
+      <%= f.hidden :user_id, value: @user.id do %>
+        <img class="platform-bordered mb-1" src="<%= cl_image_path platform.photo.key %>" />
       <% end %>
-    </div>
-    </form>
+    <% end %>
+    <%= f.button :submit %>
+<% end %>
+
+
+
+
 
     <div class="platforms">
-      <div>
-        <img class="platform-bordered mb-1" src="https://venturebeat.com/wp-content/uploads/2016/06/netflix-logo.png?fit=750%2C750&strip=all" />
+      <%# <div>
+        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670410458/netflix-logo_xibfku.png" />
       </div>
       <div>
-        <img class="platform-bordered mb-1" src="https://pbs.twimg.com/profile_images/1589591296057843713/RFeVpNYj_400x400.jpg" />
+        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670410902/RFeVpNYj_400x400_jen7b1.jpg" />
       </div>
       <div>
-        <img class="platform-bordered mb-1" src="https://i.pinimg.com/736x/f2/d3/db/f2d3dbee26e933ee8a40c6d3d01cb2d9.jpg" />
+        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670410955/f2d3dbee26e933ee8a40c6d3d01cb2d9_hgudl5.jpg" />
       </div>
       <div>
-        <img class="platform-bordered mb-1" src="https://play-lh.googleusercontent.com/zovfDsfyegE7SF3hCrN_hWPiQ2VLSh_Hreg20YsgQD5d9rfeq_HLA1fdq3q9zn-QNg" />
+        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670410978/zovfDsfyegE7SF3hCrN_hWPiQ2VLSh_Hreg20YsgQD5d9rfeq_HLA1fdq3q9zn-QNg_f9vlte.png" />
       </div>
       <div>
-        <img class="platform-bordered mb-1" src="https://www.ispreview.co.uk/wp-content/uploads/2021/03/nggallery_import/NOW_Logo_Broadband_and_TV_2021.jpg" />
+        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670411007/NOW_Logo_Broadband_and_TV_2021_nn6mgl.jpg" />
       </div>
       <div>
-        <img class="platform-bordered mb-1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Channel_4_logo_1999.svg/1024px-Channel_4_logo_1999.svg.png" />
+        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670411033/1024px-Channel_4_logo_1999.svg_sqikdd.png" />
       </div>
       <div>
-        <img class="platform-bordered mb-1" src="https://www.increasebroadbandspeed.co.uk/wp-content/uploads/2020/01/BBC-iPlayer-Logo.png" />
+        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670411071/BBC-iPlayer-Logo_nzoaxi.png" />
       </div>
       <div>
-        <img class="platform-bordered mb-1" src="https://up.metropol247.co.uk/Moz/britbox_black.png" />
+        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670411103/britbox_black_tvfpte.png" />
       </div>
-    </div>
+    </div> %>
     <div>
       <a class="btn btn-ghost" href="#">Save</a>
+      <a class="btn btn-ghost" href="#">Edit</a>
     </div>
-  </div>
 </div>

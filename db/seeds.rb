@@ -5,9 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require 'uri'
+require 'open-uri'
 require 'net/http'
 require 'openssl'
+require  'json'
+
 
 type = "movie"
 # type = "series"
@@ -182,7 +184,46 @@ end
 
 ################# platforms #################
 platforms = ["Netflix", "Amazon Prime", "Disney +", "Apple TV", "NOW TV", "ALL 4", "BBC iPlayer", "britbox"]
+Platform.destroy_all
 
-platforms.each do |platform|
-  Platform.create(name: platform)
-end
+netflix = Platform.new(name: "Netflix")
+file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670410458/netflix-logo_xibfku.png")
+netflix.photo.attach(io: file, filename: "netflix-logo_xibfku.png", content_type: "image/png")
+netflix.save
+
+amazonprime = Platform.new(name: "Amazon Prime")
+file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670410902/RFeVpNYj_400x400_jen7b1.jpg")
+amazonprime.photo.attach(io: file, filename: "RFeVpNYj_400x400_jen7b1", content_type: "image/jpg")
+amazonprime.save
+
+disney = Platform.new(name: "Disney +")
+file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670410955/f2d3dbee26e933ee8a40c6d3d01cb2d9_hgudl5.jpg")
+disney.photo.attach(io: file, filename: "f2d3dbee26e933ee8a40c6d3d01cb2d9_hgudl5.jpg", content_type: "image/jpg")
+disney.save
+
+
+
+appletv = Platform.new(name: "Apple TV")
+file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670410978/zovfDsfyegE7SF3hCrN_hWPiQ2VLSh_Hreg20YsgQD5d9rfeq_HLA1fdq3q9zn-QNg_f9vlte.png")
+appletv.photo.attach(io: file, filename: "zovfDsfyegE7SF3hCrN_hWPiQ2VLSh_Hreg20YsgQD5d9rfeq_HLA1fdq3q9zn-QNg_f9vlte.png", content_type: "image/png")
+appletv.save
+
+nowtv = Platform.new(name: "NOW TV")
+file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670411007/NOW_Logo_Broadband_and_TV_2021_nn6mgl.jpg")
+nowtv.photo.attach(io: file, filename: "NOW_Logo_Broadband_and_TV_2021_nn6mgl.jpg", content_type: "image/jpg")
+nowtv.save
+
+all4 = Platform.new(name: "ALL 4")
+file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670411033/1024px-Channel_4_logo_1999.svg_sqikdd.png")
+all4.photo.attach(io: file, filename: "1024px-Channel_4_logo_1999.svg_sqikdd.png", content_type: "image/png")
+all4.save
+
+bbciplayer = Platform.new(name: "BBC iPlayer")
+file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670411071/BBC-iPlayer-Logo_nzoaxi.png")
+bbciplayer.photo.attach(io: file, filename: "BBC-iPlayer-Logo_nzoaxi", content_type: "image/png")
+bbciplayer.save
+
+britbox = Platform.new(name: "britbox")
+file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670411103/britbox_black_tvfpte.png")
+britbox.photo.attach(io: file, filename: "britbox_black_tvfpte", content_type: "image/png")
+britbox.save
