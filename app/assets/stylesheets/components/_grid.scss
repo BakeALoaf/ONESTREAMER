@@ -1,0 +1,10 @@
+.app {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+}
+.app > * {
+  grid-column: 2 / -2;
+}
+.app > .full {
+  grid-column: 1 / -1;
+}
