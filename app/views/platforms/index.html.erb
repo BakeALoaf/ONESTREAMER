@@ -1,17 +1,19 @@
 <div class="platforms-container">
   <h1 class="platform-title">Choose your platforms</h1>
 
-    <form action="/movies" method="get">
-    <div class="platform-grid">
-      <% @platforms.each do |platform| %>
 
-        <label class="grid-icon-box" for="<%= platform.name %>">
-          <input class="grid-icon" type="checkbox" value="<%= platform.name %>" name="<%= platform.name %>" >
-         <img class="platform-bordered mb-1" src="<%= cl_image_path platform.photo.key %>" />
-        </label>
+<% @platforms.each do |platform| %>
+  <%= simple_form_for @favourite_platform do |f| %>
+      <%= f.hidden :name, value: platform.name do %>
+      <%= f.hidden :user_id, value: @user.id do %>
+        <img class="platform-bordered mb-1" src="<%= cl_image_path platform.photo.key %>" />
       <% end %>
-    </div>
-    </form>
+    <% end %>
+    <%= f.button :submit %>
+<% end %>
+
+
+
 
 
     <div class="platforms">
