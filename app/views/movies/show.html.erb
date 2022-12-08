@@ -2,7 +2,9 @@
   <div class="show_card">
     <div class="image_container">
       <div class="watch_now">
-        <%= link_to "Watch Now", @movie.video_url, target: :_blank %>
+        <div class="circle">
+          <%= link_to "", @movie.video_url, target: :_blank, class: "fa-solid fa-play"%>
+        </div>
       </div>
       <img src="<%= @movie.image_url %>">
       <div class="show_title">
