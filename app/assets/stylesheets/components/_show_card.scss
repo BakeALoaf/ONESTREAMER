@@ -59,8 +59,18 @@
   background-color: black;
 }
 
+.watch_now {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
 
-
+.watch_now a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
 
 
 
