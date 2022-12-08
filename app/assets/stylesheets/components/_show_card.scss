@@ -14,6 +14,10 @@
   background-color: black;
 }
 
+.image_container a {
+  text-decoration: none;
+}
+
 .image_container img {
   object-fit: contain;
   height: 100%;
