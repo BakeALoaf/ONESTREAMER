@@ -1,3 +1,13 @@
+  <div class="search_bar">
+    <%= form_with url: movies_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control rounded",
+        placeholder: "Find a movie"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-right: 20px; margin-left: 20px; height: 200px; border-radius: 6%;">
     <div class="carousel-inner" style="border-radius: 2%; margin-top: 20px;">
@@ -84,32 +94,15 @@
             <% end %>
       </div>
 
-          <div class="scrolling-wrapper">
-          <% @movies.each do |movie| %>
-              <% if movie.platform == "britbox" %>
-                    <a href='<%= movie_path(movie)%>' class="movie-card">
-                      <img src="<%= movie.image_url %>" alt="img">
-                    </a>
-              <% end %>
+      <div class="scrolling-wrapper">
+        <% @movies.each do |movie| %>
+            <% if movie.platform == "britbox" %>
+                  <a href='<%= movie_path(movie)%>' class="movie-card">
+                    <img src="<%= movie.image_url %>" alt="img">
+                  </a>
             <% end %>
+          <% end %>
       </div>
-
-
-
 
 </div>
 
-
-<%#
-This is a carousel with index %>
-
-<%#
-<div class="scrolling-wrapper">
-          <% @movies.each_with_index do |movie, index| %> %>
-            <%# <% active = index == 0 ? "active" : "" %>
-              <%# <% if movie.platform == "britbox" %>
-                    <%# <a href='<%= movie_path(movie)' class="movie-card">
-                      <%# <img src="<%= movie.image_url %>" alt="img"> %>
-                    <%# </a> %>
-              <%# <% end %>
-            <%# <% end %> %> %>
