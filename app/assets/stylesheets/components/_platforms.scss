@@ -3,6 +3,7 @@
   width: 350px;
   // flex-direction: column;
   text-align: center;
+  background-color: beige;
 
 }
 
@@ -25,24 +26,25 @@
 
 
 .grid-icon{
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   position: relative;
-  opacity: 1;
+  opacity: 0;
   border: rgb(68, 68, 68);
   border-style: solid;
 }
 
 .platform-title{
+  color:black;
 
 }
 
-input[type="checkbox"] {
-  -webkit-appearance: none;
-  position: relative;
-  width: 100%;
-  cursor: pointer;
-}
+// input[type="checkbox"] {
+//   -webkit-appearance: none;
+//   position: relative;
+//   width: 100%;
+//   cursor: pointer;
+// }
 
 .platforms{
   display: flex;
@@ -60,6 +62,8 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-size: cover;
+  background-position: center;
 }
 
 .btn-ghost {

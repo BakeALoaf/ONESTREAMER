@@ -378,7 +378,7 @@ nowtv.photo.attach(io: file, filename: "NOW_Logo_Broadband_and_TV_2021_nn6mgl.jp
 nowtv.save
 
 all4 = Platform.new(name: "ALL 4")
-file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670411033/1024px-Channel_4_logo_1999.svg_sqikdd.png")
+file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670496130/All4-SAMLL_lqxu9g.jpg")
 all4.photo.attach(io: file, filename: "1024px-Channel_4_logo_1999.svg_sqikdd.png", content_type: "image/png")
 all4.save
 
