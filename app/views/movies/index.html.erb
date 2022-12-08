@@ -1,13 +1,12 @@
-  <div class="search_bar">
-    <%= form_with url: movies_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control rounded",
-        placeholder: "Find a movie"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+<div>
+  <%= form_with url: movies_path, method: :get, class: "input-search search-box" do %>
+  <button class="btn-search"><i class="fas fa-search"></i></button>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "input-search",
+      placeholder: "Find a movie" %>
+  <% end %>
+</div>
 
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-right: 20px; margin-left: 20px; height: 200px; border-radius: 6%;">
     <div class="carousel-inner" style="border-radius: 2%; margin-top: 20px;">
