@@ -32,9 +32,8 @@
   </div>
 
 
-<div class="app" style="margin-bottom: 40px;">
+<div class="app" style="margin-bottom: 75px;">
       <div class="scrolling-wrapper">
-
           <% @movies.each do |movie| %>
               <% if movie.platform == "Netflix" %>
                     <a href='<%= movie_path(movie)%>' class="movie-card">
@@ -44,7 +43,7 @@
             <% end %>
       </div>
 
-      
+
 
       <div class="scrolling-wrapper">
           <% @movies.each do |movie| %>
