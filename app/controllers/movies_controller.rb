@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   def index
+
     if params[:platform]
       @movies = []
       params[:platform].each do |platform_param|
@@ -22,13 +23,10 @@ class MoviesController < ApplicationController
 
 
     @favourite_movie = FavouriteMovie.new
+
   end
 
   def show
     @movie = Movie.find(params[:id])
   end
 end
-
-
-
-

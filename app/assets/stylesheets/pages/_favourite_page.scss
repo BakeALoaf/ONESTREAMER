@@ -1,0 +1,33 @@
+.app-wrappon {
+  // display: flex;
+  display: grid;
+  grid-template-columns: 5fr 5fr ;
+  grid-gap: 10px;
+}
+
+.favourite-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.favourite-header {
+  color: white;
+}
+
+.fav-card{
+  width: 100%;
+  max-width: 100%;
+	height: 100%;
+  display: inline-block;
+}
+
+.fav-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2%;
+}
