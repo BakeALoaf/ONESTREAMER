@@ -2,8 +2,6 @@
   <div class="show_card">
     <div class="image_container">
       <img src="<%= @movie.image_url %>">
-          <%# <%= link_to "Watch Now", @movie.video_url %> %>
-          <%= link_to "Watch Now", @movie.video_url, target: :_blank %>
       <div class="show_title">
         <h3><%= @movie.name %></h3>
       </div>
@@ -16,6 +14,8 @@
           <i class="fa-brands fa-imdb"></i><%= @movie.imdb_rating %>
         </div>
         <div>
+          <%# <%= link_to "Watch Now", @movie.video_url %>
+          <%= link_to "Watch Now", @movie.video_url, target: :_blank %>
           <%= link_to "add favourite", movie_favourite_movies_path(@movie), data: { "turbo-method": :post }%>
           <%= @movie.release_date %>
         </div>
