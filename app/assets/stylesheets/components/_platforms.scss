@@ -38,7 +38,9 @@
 
 .platform-title{
   color:white;
-  margin:30px;
+  // margin-top: 50px;
+  margin:50px 30px;
+  padding-left: 30px;
 
 }
 
@@ -84,4 +86,17 @@
 
 .btn-ghost:hover {
   opacity: 1;
+}
+
+.save-platform{
+
+  color: black;
+  border: rgb(124, 120, 120) 6px solid;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: normal;
+ background-color: rgb(97, 94, 94);
+  display: block;
+  width: 200px;
+  margin:50px 43px;
 }

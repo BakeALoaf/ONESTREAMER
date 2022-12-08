@@ -1,51 +1,15 @@
+<h1 class="platform-title">Choose your platforms</h1>
 <div class="platforms-container">
-  <h1 class="platform-title">Choose your platforms</h1>
-
-
-<form action="/movies" method="get">
-    <div class="platform-grid">
-      <% @platforms.each do |platform| %>
-      <div>
-        <label for="<%= platform.name %>" class="platform-bordered mb-1" style="background-image: url('<%= cl_image_path platform.photo.key %>');">
-        <input class="grid-icon" type="checkbox" id="platform" value="<%= platform.name %>"  name="platform[]">
-         </label>
+  <form action="/movies" method="get">
+      <div class="platform-grid">
+        <% @platforms.each do |platform| %>
+        <div>
+          <label for="<%= platform.name %>" class="platform-bordered mb-1" style="background-image: url('<%= cl_image_path platform.photo.key %>');">
+          <input class="grid-icon" type="checkbox" id="platform" value="<%= platform.name %>"  name="platform[]">
+          </label>
+        </div>
+        <% end %>
       </div>
-      <% end %>
-      <input type="submit" value="Save">
-    </div>
-    </form>
-
-
-
-
-    <div class="platforms">
-      <%# <div>
-        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670410458/netflix-logo_xibfku.png" />
-      </div>
-      <div>
-        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670410902/RFeVpNYj_400x400_jen7b1.jpg" />
-      </div>
-      <div>
-        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670410955/f2d3dbee26e933ee8a40c6d3d01cb2d9_hgudl5.jpg" />
-      </div>
-      <div>
-        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670410978/zovfDsfyegE7SF3hCrN_hWPiQ2VLSh_Hreg20YsgQD5d9rfeq_HLA1fdq3q9zn-QNg_f9vlte.png" />
-      </div>
-      <div>
-        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670411007/NOW_Logo_Broadband_and_TV_2021_nn6mgl.jpg" />
-      </div>
-      <div>
-        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670496130/All4-SAMLL_lqxu9g.jpg" />
-      </div>
-      <div>
-        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670411071/BBC-iPlayer-Logo_nzoaxi.png" />
-      </div>
-      <div>
-        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670411103/britbox_black_tvfpte.png" />
-      </div>
-    </div>
-    <div> %>
-      <%# <a class="btn btn-ghost" href="#">Save</a>
-      <a class="btn btn-ghost" href="#">Edit</a> %>
-    </div>
+      <input class="save-platform" type="submit" value="Save">
+      </form>
 </div>
