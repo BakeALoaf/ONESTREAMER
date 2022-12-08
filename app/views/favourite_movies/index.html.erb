@@ -1,6 +1,12 @@
-<h1>Favourite Movies</h1>
-<% @favourite_movies.each do |fav| %>
-  <%= fav.movie.name %>
-  <%= fav.movie.imdb_rating %>
-  <%= fav.movie.image_url %> <br>
-<% end %>
+<div class="favourite-header">
+  <h1>Favourite Movies</h1>
+</div>
+<div class="app-wrappon">
+    <% @favourite_movies.each do |fav| %>
+  <div class="favourite-wrapper">
+      <a href='<%= movie_path(fav.movie)%>' class="fav-card">
+        <img src="<%= fav.movie.image_url %>" alt="img">
+      </a>
+  </div>
+    <% end %>
+</div>
