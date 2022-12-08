@@ -2,16 +2,18 @@
   <h1 class="platform-title">Choose your platforms</h1>
 
 
-<% @platforms.each do |platform| %>
-  <%= simple_form_for @favourite_platform do |f| %>
-      <%= f.hidden :name, value: platform.name do %>
-      <%= f.hidden :user_id, value: @user.id do %>
-        <img class="platform-bordered mb-1" src="<%= cl_image_path platform.photo.key %>" />
+<form action="/movies" method="get">
+    <div class="platform-grid">
+      <% @platforms.each do |platform| %>
+      <div>
+        <label for="<%= platform.name %>" class="platform-bordered mb-1" style="background-image: url('<%= cl_image_path platform.photo.key %>');">
+        <input class="grid-icon" type="checkbox" id="platform" value="<%= platform.name %>"  name="platform[]">
+         </label>
+      </div>
       <% end %>
-    <% end %>
-    <%= f.button :submit %>
-<% end %>
-
+      <input type="submit" value="Save">
+    </div>
+    </form>
 
 
 
@@ -33,7 +35,7 @@
         <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670411007/NOW_Logo_Broadband_and_TV_2021_nn6mgl.jpg" />
       </div>
       <div>
-        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670411033/1024px-Channel_4_logo_1999.svg_sqikdd.png" />
+        <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670496130/All4-SAMLL_lqxu9g.jpg" />
       </div>
       <div>
         <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670411071/BBC-iPlayer-Logo_nzoaxi.png" />
@@ -41,8 +43,8 @@
       <div>
         <img class="platform-bordered mb-1" src="https://res.cloudinary.com/dllghzftv/image/upload/v1670411103/britbox_black_tvfpte.png" />
       </div>
-    </div> %>
-    <div>
+    </div>
+    <div> %>
       <a class="btn btn-ghost" href="#">Save</a>
       <a class="btn btn-ghost" href="#">Edit</a>
     </div>
