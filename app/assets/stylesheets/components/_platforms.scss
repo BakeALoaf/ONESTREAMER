@@ -1,18 +1,20 @@
 .platforms-container{
-  margin:0 auto;
+  margin:45px;
   width: 350px;
   // flex-direction: column;
   text-align: center;
-  background-color: beige;
+  background-color: black;
 
 }
 
 .platform-grid{
   display: grid;
   gap: 10px 10px;
+  align-items: center;
   justify-content: center;
   grid-template-columns: 1fr 1fr;
   width: 100%;
+
 }
 
 .grid-item-box{
@@ -35,7 +37,8 @@
 }
 
 .platform-title{
-  color:black;
+  color:white;
+  margin:30px;
 
 }
 
