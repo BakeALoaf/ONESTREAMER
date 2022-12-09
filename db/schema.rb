@@ -44,9 +44,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_113318) do
 
   create_table "favourite_movies", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "movie_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "movie_id", null: false
     t.index ["movie_id"], name: "index_favourite_movies_on_movie_id"
     t.index ["user_id"], name: "index_favourite_movies_on_user_id"
   end

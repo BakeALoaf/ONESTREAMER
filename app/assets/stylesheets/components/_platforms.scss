@@ -1,6 +1,6 @@
 .platforms-container{
   margin:45px;
-  width: 350px;
+  width: 100%;
   // flex-direction: column;
   text-align: center;
   background-color: black;
@@ -23,7 +23,9 @@
   justify-content: center;
 }
 
-
+.checked{
+  border:rgb(255, 253, 253) 6px solid !important;
+}
 
 
 

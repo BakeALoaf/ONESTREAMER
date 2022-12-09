@@ -16,7 +16,6 @@ class MoviesController < ApplicationController
       @platforms = Platform.all
       @movies = Movie.all
     end
-
   end
 
   def show
