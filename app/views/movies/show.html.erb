@@ -9,6 +9,9 @@
       <img src="<%= @movie.image_url %>">
       <div class="show_title">
         <h3><%= @movie.name %></h3>
+        <div class="favourites">
+          <%= link_to "", movie_favourite_movies_path(@movie), data: { "turbo-method": :post }, class: "fa-solid fa-heart", style: "text-decoration: none"%>
+        </div>
       </div>
     </div>
 
@@ -18,11 +21,7 @@
         <div>
           <i class="fa-brands fa-imdb"></i><%= @movie.imdb_rating %>
         </div>
-        <div>
-          <%# <%= link_to "Watch Now", @movie.video_url %>
-          <%= link_to "add favourite", movie_favourite_movies_path(@movie), data: { "turbo-method": :post }%>
           <%= @movie.release_date %>
-        </div>
       </div>
     </div>
   </div>
