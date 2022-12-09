@@ -12,3 +12,6 @@ application.register("hello", HelloController)
 
 import SearchController from "./search_controller"
 application.register("search", SearchController)
+
+import PlatformController from "./platform_controller"
+application.register("platform", PlatformController)

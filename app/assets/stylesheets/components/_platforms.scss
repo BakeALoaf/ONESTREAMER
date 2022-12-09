@@ -1,6 +1,6 @@
 .platforms-container{
   margin:45px;
-  width: 350px;
+  width: 100%;
   // flex-direction: column;
   text-align: center;
   background-color: black;
@@ -23,7 +23,9 @@
   justify-content: center;
 }
 
-
+.checked{
+  border:rgb(255, 253, 253) 6px solid !important;
+}
 
 
 
@@ -90,12 +92,12 @@
 
 .save-platform{
 
-  color: black;
-  border: rgb(124, 120, 120) 6px solid;
+  color: white;
+  border: white 2px solid;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: normal;
- background-color: rgb(97, 94, 94);
+ background-color: black;
   display: block;
   width: 200px;
   margin:50px 42px;
