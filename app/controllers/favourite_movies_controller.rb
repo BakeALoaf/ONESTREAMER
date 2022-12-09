@@ -12,9 +12,12 @@ class FavouriteMoviesController < ApplicationController
 
   def create
     @favourite_movie = FavouriteMovie.new
-    @favourite_movie.user = current_user
-    @favourite_movie.movie = @movie
-    if @favourite_movie.save!
+    if FavouriteMovie.exists?(movie_id: @movie)
+      redirect_to favourite_movies_path
+    else
+      @favourite_movie.user = current_user
+      @favourite_movie.movie = @movie
+      @favourite_movie.save!
       redirect_to favourite_movies_path
     end
   end
