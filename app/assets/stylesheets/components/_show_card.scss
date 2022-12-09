@@ -28,7 +28,7 @@
 
 .text_container {
   position: absolute;
-  top: 600px;
+  top: 630px;
   margin-top: 20px;
   padding-left: 30px;
   padding-right: 30px;
@@ -84,10 +84,10 @@
 .watch_now a:active {
   text-decoration: none;
   opacity: 1;
-  transform: translateY(4px);
+  transform: translateY(2px);
 }
 
-a:active a:hover a:visited {
+.watch_now a:active a:hover a:visited {
   text-decoration: none;
 }
 
