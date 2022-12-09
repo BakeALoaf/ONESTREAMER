@@ -32,6 +32,8 @@
 
 
 <div class="app" style="margin-bottom: 75px;">
+      <% if @movies.find { |movie| movie.platform == "Netflix"} %>
+        <h3>Netflix </h3>
       <div class="scrolling-wrapper">
           <% @movies.each do |movie| %>
               <% if movie.platform == "Netflix" %>
@@ -41,7 +43,10 @@
               <% end %>
             <% end %>
       </div>
+      <% end %>
 
+      <% if @movies.find { |movie| movie.platform == "Disney +"} %>
+        <h3>Disney +</h3>
        <div class="scrolling-wrapper">
           <% @movies.each do |movie| %>
               <% if movie.platform == "Disney +" %>
@@ -51,9 +56,12 @@
               <% end %>
             <% end %>
       </div>
+      <% end %>
 
 
 
+      <% if @movies.find { |movie| movie.platform == "Disney +"} %>
+        <h3>Amazon Prime</h3>
       <div class="scrolling-wrapper">
           <% @movies.each do |movie| %>
               <% if movie.platform == "Amazon Prime" %>
@@ -63,7 +71,10 @@
               <% end %>
             <% end %>
       </div>
+      <% end %>
 
+      <% if @movies.find { |movie| movie.platform == "Apple TV"} %>
+        <h3>Apple TV</h3>
       <div class="scrolling-wrapper">
           <% @movies.each do |movie| %>
               <% if movie.platform == "Apple TV" %>
@@ -73,7 +84,11 @@
               <% end %>
             <% end %>
       </div>
+      <% end %>
 
+
+      <% if @movies.find { |movie| movie.platform == "NOW TV"} %>
+        <h3>NOW TV</h3>
       <div class="scrolling-wrapper">
           <% @movies.each do |movie| %>
               <% if movie.platform == "NOW TV" %>
@@ -83,7 +98,11 @@
               <% end %>
             <% end %>
       </div>
+      <% end %>
 
+
+      <% if @movies.find { |movie| movie.platform == "ALL 4"} %>
+        <h3>ALL 4</h3>
       <div class="scrolling-wrapper">
           <% @movies.each do |movie| %>
               <% if movie.platform == "ALL 4" %>
@@ -93,7 +112,10 @@
               <% end %>
             <% end %>
       </div>
+      <% end %>
 
+      <% if @movies.find { |movie| movie.platform == "BBC iPlayer"} %>
+        <h3>BBC iPlayer</h3>
        <div class="scrolling-wrapper">
           <% @movies.each do |movie| %>
               <% if movie.platform == "BBC iPlayer" %>
@@ -103,7 +125,10 @@
               <% end %>
             <% end %>
       </div>
+      <% end %>
 
+      <% if @movies.find { |movie| movie.platform == "britbox"} %>
+        <h3>Britbox</h3>
       <div class="scrolling-wrapper">
         <% @movies.each do |movie| %>
             <% if movie.platform == "britbox" %>
@@ -113,5 +138,6 @@
             <% end %>
           <% end %>
       </div>
+      <% end %>
 
 </div>
