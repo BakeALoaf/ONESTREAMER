@@ -81,6 +81,15 @@
   padding-bottom: 20px;
 }
 
+.watch_now a:active {
+  text-decoration: none;
+  opacity: 1;
+  transform: translateY(4px);
+}
+
+a:active a:hover a:visited {
+  text-decoration: none;
+}
 
 
 
