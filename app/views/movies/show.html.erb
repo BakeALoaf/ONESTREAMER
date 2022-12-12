@@ -1,27 +1,57 @@
-<div class="container_show">
+<div class="container_show" data-controller="share" data-share-url-value="<%=movie_url(@movie)%>">
   <div class="show_card">
     <div class="image_container">
+
       <div class="watch_now">
         <div class="circle">
           <%= link_to "", @movie.video_url, target: :_blank, class: "fa-solid fa-play"%>
         </div>
       </div>
+
       <img src="<%= @movie.image_url %>">
+
       <div class="show_title">
-        <h3><%= @movie.name %></h3>
-        <div class="favourites">
-          <%= link_to "", movie_favourite_movies_path(@movie), data: { "turbo-method": :post }, class: "fa-solid fa-heart", style: "text-decoration: none"%>
+
+        <div class="icons" style="display: flex; gap: 8px;">
+          <div class="favourites">
+            <%= link_to "", movie_favourite_movies_path(@movie), data: { "turbo-method": :post, controller: "favourites", action: "click->favourites#toggle" }, class: !@favourite.nil? ? 'fa-solid fa-heart fa-xl' : 'fa-regular fa-heart fa-xl', style: "text-decoration: none"%>
+          </div>
+          <%# if user.agent match chrome, safari then show share button else not %>
+          <div class="share">
+            <%= link_to "", "", class: "fa-solid fa-share fa-xl", style: "text-decoration: none", data: {
+              action: "click->share#share"
+            }%>
+            <%= content_tag(:div, "", class:"result", data: {
+              share_target: "result"
+            }) %>
+          </div>
         </div>
+
+
+      <div class="name">
+          <h3>
+            <%= content_tag(:h, @movie.name, data: {
+              share_target: "name"
+            }) %>
+          </h3>
       </div>
+
     </div>
 
     <div class="text_container">
-      <h6><%= @movie.description %></h6>
+      <div class="description">
+        <h6>
+        <%= content_tag(:h, @movie.description, data: {
+          share_target: "description"
+        }) %>
+        </h6>
+      </div>
+
       <div class="movie_info">
         <div>
-          <i class="fa-brands fa-imdb"></i><%= @movie.imdb_rating %>
+          <h6><i class="fa-brands fa-imdb"></i><%= @movie.imdb_rating %>/100</h6>
         </div>
-          <%= @movie.release_date %>
+          <h6><%= @movie.release_date %></h6>
       </div>
     </div>
   </div>

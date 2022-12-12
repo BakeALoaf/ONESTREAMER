@@ -3,12 +3,13 @@
 <%# <%= check_box :foo, :box, :onclick => "document.getElementById('foo_bar').style.display = (this.checked ? 'inline' : 'none');" %>
 <%# <%= text_field :foo, :bar, :style => ((params[:foo] and params[:foo][:box] == '1') ? 'display:inline' : 'display:none') %>
 </div>
-<div class="app-wrappon">
-    <% @favourite_movies.each do |fav| %>
-  <div class="favourite-wrapper">
-      <a href='<%= movie_path(fav.movie)%>' class="fav-card">
-        <img src="<%= fav.movie.image_url %>" alt="img">
-      </a>
+
+<div class="container">
+  <div class="app-wrappon">
+      <% @favourite_movies.each do |fav| %>
+        <a href='<%= movie_path(fav.movie)%>' class="fav-card">
+          <img src="<%= fav.movie.image_url %>" alt="img">
+        </a>
+      <% end %>
   </div>
-    <% end %>
 </div>

@@ -4,6 +4,8 @@
     <%= text_field_tag :query,
       params[:query],
       class: "input-search",
+      autocomplete: "off",
+      onfocus: "this.value = ''",
       placeholder: "Find a movie" %>
   <% end %>
 </div>
@@ -56,46 +58,46 @@
 
 
 <div class="app" style="margin-bottom: 75px; margin-top: 19px;">
-      <% if @movies.find { |movie| movie.platform == "Netflix"} %>
-        <h3>Netflix </h3>
-      <div class="scrolling-wrapper">
-          <% @movies.each do |movie| %>
-              <% if movie.platform == "Netflix" %>
-                    <a href='<%= movie_path(movie)%>' class="movie-card">
-                      <img src="<%= movie.image_url %>" alt="img">
-                    </a>
-              <% end %>
-            <% end %>
-      </div>
+  <% if @movies.find { |movie| movie.platform == "Netflix"} %>
+    <h3>Netflix </h3>
+    <div class="scrolling-wrapper">
+      <% @movies.each do |movie| %>
+          <% if movie.platform == "Netflix" %>
+              <a href='<%= movie_path(movie)%>' class="movie-card">
+                <img src="<%= movie.image_url %>" alt="img">
+              </a>
+          <% end %>
+        <% end %>
+    </div>
+  <% end %>
+
+  <% if @movies.find { |movie| movie.platform == "Disney +"} %>
+    <h3>Disney +</h3>
+    <div class="scrolling-wrapper">
+      <% @movies.each do |movie| %>
+        <% if movie.platform == "Disney +" %>
+          <a href='<%= movie_path(movie)%>' class="movie-card">
+            <img src="<%= movie.image_url %>" alt="img">
+          </a>
+        <% end %>
       <% end %>
+    </div>
+  <% end %>
 
-      <% if @movies.find { |movie| movie.platform == "Disney +"} %>
-        <h3>Disney +</h3>
-       <div class="scrolling-wrapper">
-          <% @movies.each do |movie| %>
-              <% if movie.platform == "Disney +" %>
-                    <a href='<%= movie_path(movie)%>' class="movie-card">
-                      <img src="<%= movie.image_url %>" alt="img">
-                    </a>
-              <% end %>
-            <% end %>
-      </div>
+
+
+  <% if @movies.find { |movie| movie.platform == "Amazon Prime"} %>
+    <h3>Amazon Prime</h3>
+    <div class="scrolling-wrapper">
+      <% @movies.each do |movie| %>
+        <% if movie.platform == "Amazon Prime" %>
+              <a href='<%= movie_path(movie)%>' class="movie-card">
+                <img src="<%= movie.image_url %>" alt="img">
+              </a>
+        <% end %>
       <% end %>
-
-
-
-      <% if @movies.find { |movie| movie.platform == "Amazon Prime"} %>
-        <h3>Amazon Prime</h3>
-      <div class="scrolling-wrapper">
-          <% @movies.each do |movie| %>
-              <% if movie.platform == "Amazon Prime" %>
-                    <a href='<%= movie_path(movie)%>' class="movie-card">
-                      <img src="<%= movie.image_url %>" alt="img">
-                    </a>
-              <% end %>
-            <% end %>
-      </div>
-      <% end %>
+    </div>
+  <% end %>
 
       <% if @movies.find { |movie| movie.platform == "Apple TV"} %>
         <h3>Apple TV</h3>
@@ -144,7 +146,7 @@
           <% @movies.each do |movie| %>
               <% if movie.platform == "BBC iPlayer" %>
                     <a href='<%= movie_path(movie)%>' class="movie-card">
-                      <img src="<%= movie.image_url %>" alt="img">
+                      <img src="<%= movie.image_url %>" alt="img" style="height: 181px;">
                     </a>
               <% end %>
             <% end %>

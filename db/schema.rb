@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2022_12_12_135410) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -82,8 +84,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_12_135410) do
     t.integer "imdb_rating"
     t.string "video_url"
     t.bigint "favourite_movie_id"
+
     t.string "banner_url"
+
+    t.bigint "user_id"
+
     t.index ["favourite_movie_id"], name: "index_movies_on_favourite_movie_id"
+    t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
   create_table "platforms", force: :cascade do |t|

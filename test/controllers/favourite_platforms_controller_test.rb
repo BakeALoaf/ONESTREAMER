@@ -1,6 +1,6 @@
 require "test_helper"
 
-class FavouritePlatformControllerTest < ActionDispatch::IntegrationTest
+class FavouritePlatformsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
