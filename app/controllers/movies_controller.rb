@@ -3,6 +3,7 @@ class MoviesController < ApplicationController
     # @top_movies = Movie.all.sample(4)
     @favourite_movie = FavouriteMovie.new
     @favourite_platforms = current_user.platforms
+    @random_movies = Movie.all.sample(4)
 
     if params[:query].present?
       @movies = Movie.where("name ILIKE ?", "%#{params[:query]}%")
@@ -17,7 +18,6 @@ class MoviesController < ApplicationController
     else
       @platforms = Platform.all
       @movies = Movie.all
-      @random_movies = Movie.all.sample(4)
     end
   end
 
