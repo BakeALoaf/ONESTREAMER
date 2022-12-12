@@ -20,5 +20,6 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @favourite = FavouriteMovie.where(movie_id: @movie).select { |fav| fav.user == current_user }.first
   end
 end
