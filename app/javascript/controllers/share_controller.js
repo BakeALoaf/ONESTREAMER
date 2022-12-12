@@ -16,12 +16,15 @@ export default class extends Controller {
       desciption: this.descriptionTarget.textContent,
       url: this.data.get("urlValue"),
     };
-    try {
-      await navigator.share(shareData);
-      this.resultTarget.textContent = "MDN shared succesfully";
-    } catch (err) {
-      this.resultTarget.textContent = `Error: ${err}`;
-    }
 
+    if(navigator.share){
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        this.resultTarget.textContent = `Error: ${err}`;
+      }
+    } else {
+      this.resultTarget.textContent = `Your browser does not support the share function`;
+    }
   }
 }
