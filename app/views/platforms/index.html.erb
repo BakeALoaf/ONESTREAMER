@@ -1,5 +1,6 @@
 <h1 class="platform-title">Choose your platforms</h1>
 <div class="platforms-container" data-controller="platform" style="margin-bottom: 75px;">
+
   <form action="/favourite_platforms" method="post">
       <div class="platform-grid" >
         <% @platforms.each do |platform| %>
@@ -14,6 +15,7 @@
               </label>
             <% end %>
           </div>
+
         <% end %>
       </div>
       <input class="save-platform" type="submit" value="Save">

@@ -9,19 +9,43 @@
       placeholder: "Find a movie" %>
   <% end %>
 </div>
-
+  <div class="movie-week"><h1> Picks of the week</h1></div>
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-right: 20px; margin-left: 20px; height: 200px; border-radius: 6%;">
     <div class="carousel-inner" style="border-radius: 2%; margin-top: 20px;">
+
       <div class="carousel-item active">
-        <img src="https://terrigen-cdn-dev.marvel.com/content/prod/1x/gotg_holiday_dd2c.jpg" class="d-block w-100" alt="...">
+        <%= link_to movie_path(@random_movies[0]), class: 'title-week' do %>
+         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @random_movies[0].banner_url %>')">
+          <p><%= @random_movies[0].name %></p>
+        </div>
+        <% end %>
       </div>
+
       <div class="carousel-item">
-        <img src="https://i.ytimg.com/vi/mkVpQyiQOVU/maxresdefault.jpg" class="d-block w-100" alt="...">
+        <%= link_to movie_path(@random_movies[1]), class: 'title-week' do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @random_movies[1].banner_url %>')">
+          <p><%= @random_movies[1].name %></p>
+        </div>
+        <% end %>
       </div>
+
       <div class="carousel-item">
-        <img src="https://s2.dmcdn.net/v/T4lcH1Y03jfbN2f01/x1080" class="d-block w-100" alt="...">
+        <%= link_to movie_path(@random_movies[2]), class: 'title-week' do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @random_movies[2].banner_url %>')">
+          <p><%= @random_movies[2].name %></p>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="carousel-item">
+        <%= link_to movie_path(@random_movies[3]), class: 'title-week' do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @random_movies[3].banner_url %>')">
+          <p><%= @random_movies[3].name %></p>
+        </div>
+        <% end %>
       </div>
     </div>
+
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
