@@ -21,3 +21,4 @@ application.register("search", SearchController)
 
 import ShareController from "./share_controller"
 application.register("share", ShareController)
+
