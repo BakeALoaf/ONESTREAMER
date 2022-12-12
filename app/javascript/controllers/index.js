@@ -13,8 +13,8 @@ application.register("favourites", FavouritesController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import SearchController from "./search_controller"
-application.register("search", SearchController)
-
 import PlatformController from "./platform_controller"
 application.register("platform", PlatformController)
+
+import SearchController from "./search_controller"
+application.register("search", SearchController)

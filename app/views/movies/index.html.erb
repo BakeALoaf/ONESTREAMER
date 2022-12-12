@@ -4,6 +4,8 @@
     <%= text_field_tag :query,
       params[:query],
       class: "input-search",
+      autocomplete: "off",
+      onfocus: "this.value = ''",
       placeholder: "Find a movie" %>
   <% end %>
 </div>
