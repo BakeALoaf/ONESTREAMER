@@ -13,6 +13,9 @@ application.register("favourites", FavouritesController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import IntroController from "./intro_controller"
+application.register("intro", IntroController)
+
 import PlatformController from "./platform_controller"
 application.register("platform", PlatformController)
 
@@ -21,4 +24,3 @@ application.register("search", SearchController)
 
 import ShareController from "./share_controller"
 application.register("share", ShareController)
-
