@@ -1,16 +1,22 @@
 class MoviesController < ApplicationController
   def index
     @favourite_movie = FavouriteMovie.new
+    @favourite_platforms = current_user.platforms
 
-    if params[:platform]
+    if params[:query].present?
+      @movies = Movie.where("name ILIKE ?", "%#{params[:query]}%")
+    elsif @favourite_platforms.length > 0
       @movies = []
-      params[:platform].each do |platform_param|
-        platform = Platform.find_by(name: platform_param)
+      @favourite_platforms.each do |platform|
         @movies << platform.movies
       end
       @movies.flatten!
+<<<<<<< HEAD
     elsif params[:query].present?
       @movies = Movie.where("name ILIKE ?", "%#{params[:query]}%")
+=======
+      # raise
+>>>>>>> 0eda212c9d0ebf5d5314348f5394d30ba99c2a17
     else
       @platforms = Platform.all
       @movies = Movie.all
