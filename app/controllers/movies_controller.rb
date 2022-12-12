@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   def index
+    # @top_movies = Movie.all.sample(4)
     @favourite_movie = FavouriteMovie.new
 
     if params[:platform]
@@ -15,6 +16,7 @@ class MoviesController < ApplicationController
     else
       @platforms = Platform.all
       @movies = Movie.all
+      @random_movies = Movie.all.sample(4)
     end
   end
 

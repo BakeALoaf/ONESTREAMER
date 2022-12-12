@@ -1,6 +1,6 @@
 .platforms-container{
   margin:45px;
-  width: 100%;
+  width: 100%vw;
   // flex-direction: column;
   text-align: center;
   background-color: black;
@@ -9,12 +9,17 @@
 
 .platform-grid{
   display: grid;
-  gap: 10px 10px;
+  gap: 10px;
   align-items: center;
   justify-content: center;
   grid-template-columns: 1fr 1fr;
   width: 100%;
 
+}
+
+.grid-square{
+  align-self: center;
+    justify-self: center;
 }
 
 .grid-item-box{
@@ -24,7 +29,7 @@
 }
 
 .checked{
-  border:rgb(255, 253, 253) 6px solid !important;
+  border:rgb(172, 172, 172) 8px solid !important;
 }
 
 
