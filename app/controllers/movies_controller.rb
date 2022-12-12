@@ -11,7 +11,6 @@ class MoviesController < ApplicationController
       @movies.flatten!
     elsif params[:query].present?
       @movies = Movie.where("name ILIKE ?", "%#{params[:query]}%")
-
     else
       @platforms = Platform.all
       @movies = Movie.all
