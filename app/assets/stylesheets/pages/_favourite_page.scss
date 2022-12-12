@@ -1,38 +1,27 @@
 .app-wrappon {
   // display: flex;
   display: grid;
-  grid-template-columns: 5fr 5fr ;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 30px;
   margin-bottom: 75px;
 }
 
-// .favourite-wrapper {
-//   display: flex;
-//   justify-content: center;
-//   height: 200px;
-//   width: 100%;
-//   padding-left: 10px;
-//   padding-right: 10px;
-// }
-
 .favourite-header {
-  padding-top: 20px;
+  padding-top: 50px;
+  padding-bottom: 10px;
   display: flex;
   justify-content: center;
   color: white;
 }
 
 .fav-card{
-  padding-top: 20px;
-  padding-left: 20px;
-  width: 100%;
-  max-width: 100%;
-	height: 100%;
-  display: inline-block;
+  width: 145px;
 }
 
 .fav-card img{
-  width: 150px;
   height: 100%;
+  width: 100%;
   object-fit: cover;
   border-radius: 2%;
 }
