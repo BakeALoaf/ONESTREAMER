@@ -3,11 +3,17 @@
   <form action="/favourite_platforms" method="post">
       <div class="platform-grid" >
         <% @platforms.each do |platform| %>
-        <div>
-          <label for="<%= platform.name %>" class="platform-bordered mb-1" style="background-image: url('<%= cl_image_path platform.photo.key %>');" data-platform-target="icon">
-          <input class="grid-icon" type="checkbox" id="platform" value="<%= platform.name %>"  name="platform[]"  data-action="change->platform#select" data-platform-target="input" >
-          </label>
-        </div>
+          <div>
+            <% if @favourite_platforms.include?(platform) %>
+              <label for="<%= platform.name %>" class="platform-bordered mb-1 checked" style="background-image: url('<%= cl_image_path platform.photo.key %>');" data-platform-target="icon">
+              <input class="grid-icon" checked type="checkbox" id="platform" value="<%= platform.name %>"  name="platform[]"  data-action="change->platform#select" data-platform-target="input" >
+              </label>
+            <% else %>
+              <label for="<%= platform.name %>" class="platform-bordered mb-1" style="background-image: url('<%= cl_image_path platform.photo.key %>');" data-platform-target="icon">
+              <input class="grid-icon" type="checkbox" id="platform" value="<%= platform.name %>"  name="platform[]"  data-action="change->platform#select" data-platform-target="input" >
+              </label>
+            <% end %>
+          </div>
         <% end %>
       </div>
       <input class="save-platform" type="submit" value="Save">

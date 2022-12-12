@@ -1,7 +1,7 @@
 class PlatformsController < ApplicationController
   def index
     @platforms = Platform.all
-    @favourite_platform = FavouritePlatform.new
+    @favourite_platforms = current_user.platforms
     @user = current_user
   end
 end
