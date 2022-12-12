@@ -12,13 +12,13 @@ class FavouriteMoviesController < ApplicationController
 
   def create
     @favourite_movie = FavouriteMovie.new
-    if FavouriteMovie.exists?(movie_id: @movie)
-      redirect_to favourite_movies_path
+    @favourite = FavouriteMovie.where(movie_id: @movie).select { |fav| fav.user == current_user }.first
+    unless @favourite.nil?
+      @favourite.destroy
     else
       @favourite_movie.user = current_user
       @favourite_movie.movie = @movie
       @favourite_movie.save!
-      redirect_to favourite_movies_path
     end
   end
 
