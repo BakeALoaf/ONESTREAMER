@@ -6,7 +6,4 @@ class FavouritePlatformsController < ApplicationController
     end
     redirect_to movies_path
   end
-
-  def update
-  end
 end
