@@ -4,12 +4,19 @@
 <%# <%= text_field :foo, :bar, :style => ((params[:foo] and params[:foo][:box] == '1') ? 'display:inline' : 'display:none') %>
 </div>
 
-<div class="container">
+<div class="favourites">
   <div class="app-wrappon">
+    <div class="fav-cards">
       <% @favourite_movies.each do |fav| %>
-        <a href='<%= movie_path(fav.movie)%>' class="fav-card">
-          <img src="<%= fav.movie.image_url %>" alt="img">
-        </a>
+          <div class="image-wrap">
+            <%= link_to movie_path(fav.movie), class: "fav-card" do %>
+            <img src="<%= fav.movie.image_url %>" alt="img" />
+            <div>
+              <%= link_to "", movie_favourite_movies_path(fav.movie), data: { "turbo-method": :post, controller: "favourites", action: "click->favourites#toggle" }, class: !fav.nil? ? 'fav-page fa-solid fa-heart fa-l' : 'fav-page fa-regular fa-heart fa-l'  %>
+            </div>
+            <% end %>
+          </div>
       <% end %>
+    </div>
   </div>
 </div>
