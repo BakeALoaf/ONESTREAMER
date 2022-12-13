@@ -80,7 +80,7 @@ end
 
 ################# AMAZON #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=amazon&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=prime&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -256,7 +256,7 @@ end
 
 ################# AMAZON #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=amazon&type=series&order_by=original_title&desc=true&language=en&output_language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=prime&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
