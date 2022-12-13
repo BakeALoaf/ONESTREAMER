@@ -31,6 +31,8 @@ gem "jbuilder"
 
 gem "pg_search"
 
+gem "browser"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

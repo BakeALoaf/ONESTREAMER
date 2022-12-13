@@ -5,6 +5,6 @@ export default class extends Controller {
   connect() {
     window.setTimeout(function() {
       window.location.href = `${window.location.href}/movies`;
-      }, 6500);
+      }, 2500);
   }
 }
