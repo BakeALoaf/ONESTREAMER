@@ -83,6 +83,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
+    browser (5.3.1)
     builder (3.2.4)
     capybara (3.38.0)
       addressable
@@ -275,6 +276,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
+  browser
   capybara
   cloudinary
   debug

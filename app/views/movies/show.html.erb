@@ -1,3 +1,5 @@
+
+
 <div class="container_show" data-controller="share" data-share-url-value="<%=movie_url(@movie)%>">
   <div class="show_card">
     <div class="image_container">
@@ -11,12 +13,13 @@
       </div>
     </div>
 
+
     <div class="icons" style="display: flex; justify-content: space-between;">
       <div class="favourites">
         <%= link_to "", movie_favourite_movies_path(@movie), data: { "turbo-method": :post, controller: "favourites", action: "click->favourites#toggle" }, class: !@favourite.nil? ? 'fa-solid fa-heart fa-xl' : 'fa-regular fa-heart fa-xl', style: "text-decoration: none"%>
       </div>
-      
-      <%# if user.agent match chrome, safari then show share button else not %>
+
+    <% if browser.chrome? %>
       <div class="share">
         <%= link_to "", "", class: "fa-solid fa-share fa-xl", style: "text-decoration: none", data: {
           action: "click->share#share"
@@ -25,8 +28,9 @@
           share_target: "result"
         }) %>
       </div>
-
-
+    <% elsif browser.firefox? %>
+    <% elsif browser.platform.android_app? %>
+    <% end %>
     </div>
 
     <div class="show_title">
