@@ -8,13 +8,20 @@
 }
 
 .platform-grid{
+  div{justify-content: center;}
   display: grid;
   gap: 10px;
-  align-items: center;
   justify-content: center;
   grid-template-columns: 1fr 1fr;
   width: 100%;
+  margin-left: 2px;
 
+}
+
+.platform_form{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .grid-square{
@@ -29,7 +36,8 @@
 }
 
 .checked{
-  border:rgb(172, 172, 172) 8px solid !important;
+  border:rgb(44, 30, 245) 8px solid !important;
+
 }
 
 
@@ -37,10 +45,11 @@
 .grid-icon{
   height: 80px;
   width: 80px;
-  position: relative;
+  // position: relative;
   opacity: 0;
   border: rgb(68, 68, 68);
   border-style: solid;
+  align-self: center;
 }
 
 .platform-title{
@@ -51,13 +60,6 @@
 
 }
 
-// input[type="checkbox"] {
-//   -webkit-appearance: none;
-//   position: relative;
-//   width: 100%;
-//   cursor: pointer;
-// }
-
 .platforms{
   display: flex;
   flex-wrap: wrap;
@@ -66,11 +68,13 @@
 }
 
 .platform-bordered {
+  margin-left: 12px;
+  position: relative;
   height: 120px;
   width: 120px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: rgb(68, 68, 68) 6px solid;
+  border: rgb(73, 73, 73) 6px solid;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,8 +106,8 @@
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: normal;
- background-color: black;
+  background-color: black;
   display: block;
   width: 200px;
-  margin:50px 42px;
+  margin-top: 50px;
 }

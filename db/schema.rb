@@ -82,9 +82,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_112618) do
     t.integer "imdb_rating"
     t.string "video_url"
     t.bigint "favourite_movie_id"
-    t.bigint "user_id"
     t.string "banner_url"
+
+    t.bigint "user_id"
+
     t.string "trailer_url"
+
     t.index ["favourite_movie_id"], name: "index_movies_on_favourite_movie_id"
     t.index ["user_id"], name: "index_movies_on_user_id"
   end
