@@ -13,5 +13,10 @@
         action: "keyup->search#update"
         } %>
   <% end %>
+  <%= image_tag"loggoooo.png", class:"logo" %>
+</div>
+  <div class="movie-week"><h1> Picks of the week</h1></div>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-right: 20px; margin-left: 20px; height: 200px; border-radius: 6%;">
+    <div class="carousel-inner" style="border-radius: 2%; margin-top: 20px;">
 
 <%= render 'list', movies: @movies %>
