@@ -1,8 +1,8 @@
 <div data-search-target="list">
     <% if params[:query].present? %>
 
-        <div class="container">
-          <div class="app-wrappon">
+        <div class="container" style="margin-top: 20px;">
+          <div class="list-wrappon">
             <% @movies.each do |movie| %>
               <a href='<%= movie_path(movie)%>' class="fav-card">
                 <img src="<%= movie.image_url %>" alt="img">

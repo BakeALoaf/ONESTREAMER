@@ -10,54 +10,55 @@ require 'net/http'
 require 'openssl'
 require 'json'
 
-################# platforms #################
+# ################# platforms #################
 
-platforms = ["Netflix", "Amazon Prime", "Disney +", "Apple TV", "NOW TV", "ALL 4", "BBC iPlayer", "britbox"]
-Platform.destroy_all
+# platforms = ["Netflix", "Amazon Prime", "Disney +", "Apple TV", "NOW TV", "ALL 4", "BBC iPlayer", "britbox"]
+# Platform.destroy_all
 
-netflix_platform = Platform.new(name: "Netflix")
-file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670410458/netflix-logo_xibfku.png")
-netflix_platform.photo.attach(io: file, filename: "netflix-logo_xibfku.png", content_type: "image/png")
-netflix_platform.save
+# netflix_platform = Platform.new(name: "Netflix")
+# file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670410458/netflix-logo_xibfku.png")
+# netflix_platform.photo.attach(io: file, filename: "netflix-logo_xibfku.png", content_type: "image/png")
+# netflix_platform.save
 
 
-amazonprime_platform = Platform.new(name: "Amazon Prime")
-file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670410902/RFeVpNYj_400x400_jen7b1.jpg")
-amazonprime_platform.photo.attach(io: file, filename: "RFeVpNYj_400x400_jen7b1", content_type: "image/jpg")
-amazonprime_platform.save
+# amazonprime_platform = Platform.new(name: "Amazon Prime")
+# file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670410902/RFeVpNYj_400x400_jen7b1.jpg")
+# amazonprime_platform.photo.attach(io: file, filename: "RFeVpNYj_400x400_jen7b1", content_type: "image/jpg")
+# amazonprime_platform.save
 
-disney_platform = Platform.new(name: "Disney +")
-file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670410955/f2d3dbee26e933ee8a40c6d3d01cb2d9_hgudl5.jpg")
-disney_platform.photo.attach(io: file, filename: "f2d3dbee26e933ee8a40c6d3d01cb2d9_hgudl5.jpg", content_type: "image/jpg")
-disney_platform.save
+# disney_platform = Platform.new(name: "Disney +")
+# file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670410955/f2d3dbee26e933ee8a40c6d3d01cb2d9_hgudl5.jpg")
+# disney_platform.photo.attach(io: file, filename: "f2d3dbee26e933ee8a40c6d3d01cb2d9_hgudl5.jpg", content_type: "image/jpg")
+# disney_platform.save
 
-appletv_platform = Platform.new(name: "Apple TV")
-file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670410978/zovfDsfyegE7SF3hCrN_hWPiQ2VLSh_Hreg20YsgQD5d9rfeq_HLA1fdq3q9zn-QNg_f9vlte.png")
-appletv_platform.photo.attach(io: file, filename: "zovfDsfyegE7SF3hCrN_hWPiQ2VLSh_Hreg20YsgQD5d9rfeq_HLA1fdq3q9zn-QNg_f9vlte.png", content_type: "image/png")
-appletv_platform.save
+# appletv_platform = Platform.new(name: "Apple TV")
+# file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670410978/zovfDsfyegE7SF3hCrN_hWPiQ2VLSh_Hreg20YsgQD5d9rfeq_HLA1fdq3q9zn-QNg_f9vlte.png")
+# appletv_platform.photo.attach(io: file, filename: "zovfDsfyegE7SF3hCrN_hWPiQ2VLSh_Hreg20YsgQD5d9rfeq_HLA1fdq3q9zn-QNg_f9vlte.png", content_type: "image/png")
+# appletv_platform.save
 
-nowtv_platform = Platform.new(name: "NOW TV")
-file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670411007/NOW_Logo_Broadband_and_TV_2021_nn6mgl.jpg")
-nowtv_platform.photo.attach(io: file, filename: "NOW_Logo_Broadband_and_TV_2021_nn6mgl.jpg", content_type: "image/jpg")
-nowtv_platform.save
+# nowtv_platform = Platform.new(name: "NOW TV")
+# file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670411007/NOW_Logo_Broadband_and_TV_2021_nn6mgl.jpg")
+# nowtv_platform.photo.attach(io: file, filename: "NOW_Logo_Broadband_and_TV_2021_nn6mgl.jpg", content_type: "image/jpg")
+# nowtv_platform.save
 
-all4_platform = Platform.new(name: "ALL 4")
-file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670496130/All4-SAMLL_lqxu9g.jpg")
-all4_platform.photo.attach(io: file, filename: "1024px-Channel_4_logo_1999.svg_sqikdd.png", content_type: "image/png")
-all4_platform.save
+# all4_platform = Platform.new(name: "ALL 4")
+# file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670496130/All4-SAMLL_lqxu9g.jpg")
+# all4_platform.photo.attach(io: file, filename: "1024px-Channel_4_logo_1999.svg_sqikdd.png", content_type: "image/png")
+# all4_platform.save
 
-bbciplayer_platform = Platform.new(name: "BBC iPlayer")
-file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670411071/BBC-iPlayer-Logo_nzoaxi.png")
-bbciplayer_platform.photo.attach(io: file, filename: "BBC-iPlayer-Logo_nzoaxi", content_type: "image/png")
-bbciplayer_platform.save
+# bbciplayer_platform = Platform.new(name: "BBC iPlayer")
+# file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670411071/BBC-iPlayer-Logo_nzoaxi.png")
+# bbciplayer_platform.photo.attach(io: file, filename: "BBC-iPlayer-Logo_nzoaxi", content_type: "image/png")
+# bbciplayer_platform.save
 
-britbox_platform = Platform.new(name: "britbox")
-file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670411103/britbox_black_tvfpte.png")
-britbox_platform.photo.attach(io: file, filename: "britbox_black_tvfpte", content_type: "image/png")
-britbox_platform.save
+# britbox_platform = Platform.new(name: "britbox")
+# file = URI.open("https://res.cloudinary.com/dllghzftv/image/upload/v1670411103/britbox_black_tvfpte.png")
+# britbox_platform.photo.attach(io: file, filename: "britbox_black_tvfpte", content_type: "image/png")
+# britbox_platform.save
 
 ################# NETFLIX #################
-
+# 62.times do |x|
+#   x += 1
 url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=netflix&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
@@ -74,336 +75,336 @@ post = JSON.parse(variable)
 netflixs = post['results']
 
 netflixs.each do |netflix|
-  Movie.create!(name: netflix['originalTitle'], description: netflix['overview'], imdb_rating: netflix['imdbRating'], image_url: netflix['posterURLs']['original'],banner_url: netflix['backdropURLs']['original'], release_date: netflix['year'], genre: netflix['genres'][1], video_url: netflix['streamingInfo']['netflix']['gb']['link'], platform: "Netflix", trailer_url: netflix['video'])
+  Movie.create!(name: netflix['originalTitle'], description: netflix['overview'], imdb_rating: netflix['imdbRating'], image_url: netflix['posterURLs']['original'],banner_url: netflix['backdropURLs']['original'], release_date: netflix['year'], genre: netflix['genres'][1], video_url: netflix['streamingInfo']['netflix']['gb']['link'], platform: "Netflix", trailer_url: netflix['video'], imdb_url: netflix['imdbID'])
   MoviePlatform.create!(platform: netflix_platform, movie: Movie.last)
-end
+  end
+# end
+# ################# AMAZON #################
 
-################# AMAZON #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=prime&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=prime&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# primes = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-primes = post['results']
+# primes.each do |prime|
+#   Movie.create!(name: prime['originalTitle'], description: prime['overview'], imdb_rating: prime['imdbRating'], image_url: prime['posterURLs']['original'],banner_url: prime['backdropURLs']['original'], release_date: prime['year'], genre: prime['genres'][1], video_url: prime['streamingInfo']['prime']['gb']['link'], platform: "Amazon Prime", trailer_url: prime['video'], imdb_url: prime['imdbID'])
+#   MoviePlatform.create!(platform: amazonprime_platform, movie: Movie.last)
+# end
 
-primes.each do |prime|
-  Movie.create!(name: prime['originalTitle'], description: prime['overview'], imdb_rating: prime['imdbRating'], image_url: prime['posterURLs']['original'],banner_url: prime['backdropURLs']['original'], release_date: prime['year'], genre: prime['genres'][1], video_url: prime['streamingInfo']['prime']['gb']['link'], platform: "Amazon Prime", trailer_url: prime['video'])
-  MoviePlatform.create!(platform: amazonprime_platform, movie: Movie.last)
-end
+# ################# DISNEY #################
 
-################# DISNEY #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=disney&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=disney&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# disneys = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-disneys = post['results']
+# disneys.each do |disney|
+#   Movie.create!(name: disney['originalTitle'], description: disney['overview'], imdb_rating: disney['imdbRating'], image_url: disney['posterURLs']['original'],banner_url: disney['backdropURLs']['original'],release_date: disney['year'], genre: disney['genres'][1], video_url: disney['streamingInfo']['disney']['gb']['link'], platform: "Disney +", trailer_url: disney['video'], imdb_url: disney['imdbID'])
+#   MoviePlatform.create!(platform: disney_platform, movie: Movie.last)
+# end
 
-disneys.each do |disney|
-  Movie.create!(name: disney['originalTitle'], description: disney['overview'], imdb_rating: disney['imdbRating'], image_url: disney['posterURLs']['original'],banner_url: disney['backdropURLs']['original'],release_date: disney['year'], genre: disney['genres'][1], video_url: disney['streamingInfo']['disney']['gb']['link'], platform: "Disney +", trailer_url: disney['video'])
-  MoviePlatform.create!(platform: disney_platform, movie: Movie.last)
-end
+# ################# APPLE #################
 
-################# APPLE #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=apple&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=apple&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# apples = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-apples = post['results']
+# apples.each do |apple|
+#   Movie.create!(name: apple['originalTitle'], description: apple['overview'], imdb_rating: apple['imdbRating'], image_url: apple['posterURLs']['original'],banner_url: apple['backdropURLs']['original'], release_date: apple['year'], genre: apple['genres'][1], video_url: apple['streamingInfo']['apple']['gb']['link'], platform: "Apple TV", trailer_url: apple['video'], imdb_url: apple['imdbID'])
+#   MoviePlatform.create!(platform: appletv_platform, movie: Movie.last)
+# end
 
-apples.each do |apple|
-  Movie.create!(name: apple['originalTitle'], description: apple['overview'], imdb_rating: apple['imdbRating'], image_url: apple['posterURLs']['original'],banner_url: apple['backdropURLs']['original'], release_date: apple['year'], genre: apple['genres'][1], video_url: apple['streamingInfo']['apple']['gb']['link'], platform: "Apple TV", trailer_url: apple['video'])
-  MoviePlatform.create!(platform: appletv_platform, movie: Movie.last)
-end
+# ################# NOW #################
 
-################# NOW #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=now&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=now&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# nows = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-nows = post['results']
+# nows.each do |now|
+#   Movie.create!(name: now['originalTitle'], description: now['overview'], imdb_rating: now['imdbRating'], image_url: now['posterURLs']['original'],banner_url: now['backdropURLs']['original'], release_date: now['year'], genre: now['genres'][1], video_url: now['streamingInfo']['now']['gb']['link'], platform: "NOW TV", trailer_url: now['video'], imdb_url: now['imdbID'])
+#   MoviePlatform.create!(platform: nowtv_platform, movie: Movie.last)
+# end
 
-nows.each do |now|
-  Movie.create!(name: now['originalTitle'], description: now['overview'], imdb_rating: now['imdbRating'], image_url: now['posterURLs']['original'],banner_url: now['backdropURLs']['original'], release_date: now['year'], genre: now['genres'][1], video_url: now['streamingInfo']['now']['gb']['link'], platform: "NOW TV", trailer_url: now['video'])
-  MoviePlatform.create!(platform: nowtv_platform, movie: Movie.last)
-end
+# ################# ALL 4 #################
 
-################# ALL 4 #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=all4&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=all4&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# allfour = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-allfour = post['results']
+# allfour.each do |four|
+#   Movie.create!(name: four['originalTitle'], description: four['overview'], imdb_rating: four['imdbRating'], image_url: four['posterURLs']['original'],banner_url: four['backdropURLs']['original'], release_date: four['year'], genre: four['genres'][1], video_url: four['streamingInfo']['all4']['gb']['link'], platform: "ALL 4", trailer_url: four['video'], imdb_url: four['imdbID'])
+#   MoviePlatform.create!(platform: all4_platform, movie: Movie.last)
+# end
 
-allfour.each do |four|
-  Movie.create!(name: four['originalTitle'], description: four['overview'], imdb_rating: four['imdbRating'], image_url: four['posterURLs']['original'],banner_url: four['backdropURLs']['original'], release_date: four['year'], genre: four['genres'][1], video_url: four['streamingInfo']['all4']['gb']['link'], platform: "ALL 4", trailer_url: four['video'])
-  MoviePlatform.create!(platform: all4_platform, movie: Movie.last)
-end
+# ################# iplayer #################
 
-################# iplayer #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=iplayer&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=iplayer&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# iplayer = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-iplayer = post['results']
+# iplayer.each do |bbc|
+#   Movie.create!(name: bbc['originalTitle'], description: bbc['overview'], imdb_rating: bbc['imdbRating'], image_url: bbc['posterURLs']['original'],banner_url: bbc['backdropURLs']['original'], release_date: bbc['year'], genre: bbc['genres'][1], video_url: bbc['streamingInfo']['iplayer']['gb']['link'], platform: "BBC iPlayer", trailer_url: bbc['video'], imdb_url: bbc['imdbID'])
+#   MoviePlatform.create!(platform: bbciplayer_platform, movie: Movie.last)
+# end
 
-iplayer.each do |bbc|
-  Movie.create!(name: bbc['originalTitle'], description: bbc['overview'], imdb_rating: bbc['imdbRating'], image_url: bbc['posterURLs']['original'],banner_url: bbc['backdropURLs']['original'], release_date: bbc['year'], genre: bbc['genres'][1], video_url: bbc['streamingInfo']['iplayer']['gb']['link'], platform: "BBC iPlayer", trailer_url: bbc['video'])
-  MoviePlatform.create!(platform: bbciplayer_platform, movie: Movie.last)
-end
+# ################# britbox #################
 
-################# britbox #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=britbox&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=britbox&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# britboxs = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-britboxs = post['results']
+# britboxs.each do |britbox|
+#   Movie.create!(name: britbox['originalTitle'], description: britbox['overview'], imdb_rating: britbox['imdbRating'], image_url: britbox['posterURLs']['original'],banner_url: britbox['backdropURLs']['original'], release_date: britbox['year'], genre: britbox['genres'][1], video_url: britbox['streamingInfo']['britbox']['gb']['link'], platform: "britbox", trailer_url: britbox['video'], imdb_url: britbox['imdbID'])
+#   MoviePlatform.create!(platform: britbox_platform, movie: Movie.last)
+# end
 
-britboxs.each do |britbox|
-  Movie.create!(name: britbox['originalTitle'], description: britbox['overview'], imdb_rating: britbox['imdbRating'], image_url: britbox['posterURLs']['original'],banner_url: britbox['backdropURLs']['original'], release_date: britbox['year'], genre: britbox['genres'][1], video_url: britbox['streamingInfo']['britbox']['gb']['link'], platform: "britbox", trailer_url: britbox['video'])
-  MoviePlatform.create!(platform: britbox_platform, movie: Movie.last)
-end
+# ################# NETFLIX #################
 
-################# NETFLIX #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=netflix&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=netflix&type=series&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# netflixs = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-netflixs = post['results']
+# netflixs.each do |netflix|
+#   Movie.create!(name: netflix['originalTitle'], description: netflix['overview'], imdb_rating: netflix['imdbRating'], image_url: netflix['posterURLs']['original'], banner_url: netflix['backdropURLs']['original'],release_date: netflix['year'], genre: netflix['genres'][1], video_url: netflix['streamingInfo']['netflix']['gb']['link'], platform: "Netflix", trailer_url: netflix['video'], imdb_url: netflix['imdbID'])
+#   MoviePlatform.create!(platform: netflix_platform, movie: Movie.last)
+# end
 
-netflixs.each do |netflix|
-  Movie.create!(name: netflix['originalTitle'], description: netflix['overview'], imdb_rating: netflix['imdbRating'], image_url: netflix['posterURLs']['original'], banner_url: netflix['backdropURLs']['original'],release_date: netflix['year'], genre: netflix['genres'][1], video_url: netflix['streamingInfo']['netflix']['gb']['link'], platform: "Netflix", trailer_url: netflix['video'])
-  MoviePlatform.create!(platform: netflix_platform, movie: Movie.last)
-end
+# ################# AMAZON #################
 
-################# AMAZON #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=prime&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=prime&type=series&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# primes = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-primes = post['results']
+# primes.each do |prime|
+#   Movie.create!(name: prime['originalTitle'], description: prime['overview'], imdb_rating: prime['imdbRating'], image_url: prime['posterURLs']['original'],banner_url: prime['backdropURLs']['original'], release_date: prime['year'], genre: prime['genres'][1], video_url: prime['streamingInfo']['prime']['gb']['link'], platform: "Amazon Prime", trailer_url: prime['video'], imdb_url: prime['imdbID'])
+#   MoviePlatform.create!(platform: amazonprime_platform, movie: Movie.last)
+# end
 
-primes.each do |prime|
-  Movie.create!(name: prime['originalTitle'], description: prime['overview'], imdb_rating: prime['imdbRating'], image_url: prime['posterURLs']['original'],banner_url: prime['backdropURLs']['original'], release_date: prime['year'], genre: prime['genres'][1], video_url: prime['streamingInfo']['prime']['gb']['link'], platform: "Amazon Prime", trailer_url: prime['video'])
-  MoviePlatform.create!(platform: amazonprime_platform, movie: Movie.last)
-end
+# ################# DISNEY #################
 
-################# DISNEY #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=disney&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=disney&type=series&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# disneys = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-disneys = post['results']
+# disneys.each do |disney|
+#   Movie.create!(name: disney['originalTitle'], description: disney['overview'], imdb_rating: disney['imdbRating'], image_url: disney['posterURLs']['original'],banner_url: disney['backdropURLs']['original'], release_date: disney['year'], genre: disney['genres'][1], video_url: disney['streamingInfo']['disney']['gb']['link'], platform: "Disney +", trailer_url: disney['video'], imdb_url: disney['imdbID'])
+#   MoviePlatform.create!(platform: disney_platform, movie: Movie.last)
+# end
 
-disneys.each do |disney|
-  Movie.create!(name: disney['originalTitle'], description: disney['overview'], imdb_rating: disney['imdbRating'], image_url: disney['posterURLs']['original'],banner_url: disney['backdropURLs']['original'], release_date: disney['year'], genre: disney['genres'][1], video_url: disney['streamingInfo']['disney']['gb']['link'], platform: "Disney +", trailer_url: disney['video'])
-  MoviePlatform.create!(platform: disney_platform, movie: Movie.last)
-end
+# ################# APPLE #################
 
-################# APPLE #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=apple&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=apple&type=series&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# apples = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-apples = post['results']
+# apples.each do |apple|
+#   Movie.create!(name: apple['originalTitle'], description: apple['overview'], imdb_rating: apple['imdbRating'], image_url: apple['posterURLs']['original'],banner_url: apple['backdropURLs']['original'], release_date: apple['year'], genre: apple['genres'][1], video_url: apple['streamingInfo']['apple']['gb']['link'], platform: "Apple TV", trailer_url: apple['video'], imdb_url: apple['imdbID'])
+#   MoviePlatform.create!(platform: appletv_platform, movie: Movie.last)
+# end
 
-apples.each do |apple|
-  Movie.create!(name: apple['originalTitle'], description: apple['overview'], imdb_rating: apple['imdbRating'], image_url: apple['posterURLs']['original'],banner_url: apple['backdropURLs']['original'], release_date: apple['year'], genre: apple['genres'][1], video_url: apple['streamingInfo']['apple']['gb']['link'], platform: "Apple TV", trailer_url: apple['video'])
-  MoviePlatform.create!(platform: appletv_platform, movie: Movie.last)
-end
+# ################# NOW #################
 
-################# NOW #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=now&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=now&type=series&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# nows = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-nows = post['results']
+# nows.each do |now|
+#   Movie.create!(name: now['originalTitle'], description: now['overview'], imdb_rating: now['imdbRating'], image_url: now['posterURLs']['original'],banner_url: now['backdropURLs']['original'], release_date: now['year'], genre: now['genres'][1], video_url: now['streamingInfo']['now']['gb']['link'], platform: "NOW TV", trailer_url: now['video'], imdb_url: now['imdbID'])
+#   MoviePlatform.create!(platform: nowtv_platform, movie: Movie.last)
+# end
 
-nows.each do |now|
-  Movie.create!(name: now['originalTitle'], description: now['overview'], imdb_rating: now['imdbRating'], image_url: now['posterURLs']['original'],banner_url: now['backdropURLs']['original'], release_date: now['year'], genre: now['genres'][1], video_url: now['streamingInfo']['now']['gb']['link'], platform: "NOW TV", trailer_url: now['video'])
-  MoviePlatform.create!(platform: nowtv_platform, movie: Movie.last)
-end
+# ################# ALL 4 #################
 
-################# ALL 4 #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=all4&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=all4&type=series&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# allfour = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-allfour = post['results']
+# allfour.each do |four|
+#   Movie.create!(name: four['originalTitle'], description: four['overview'], imdb_rating: four['imdbRating'], image_url: four['posterURLs']['original'],banner_url: four['backdropURLs']['original'], release_date: four['year'], genre: four['genres'][1], video_url: four['streamingInfo']['all4']['gb']['link'], platform: "ALL 4", trailer_url: four['video'], imdb_url: four['imdbID'])
+#   MoviePlatform.create!(platform: all4_platform, movie: Movie.last)
+# end
 
-allfour.each do |four|
-  Movie.create!(name: four['originalTitle'], description: four['overview'], imdb_rating: four['imdbRating'], image_url: four['posterURLs']['original'],banner_url: four['backdropURLs']['original'], release_date: four['year'], genre: four['genres'][1], video_url: four['streamingInfo']['all4']['gb']['link'], platform: "ALL 4", trailer_url: four['video'])
-  MoviePlatform.create!(platform: all4_platform, movie: Movie.last)
-end
+# ################# iplayer #################
 
-################# iplayer #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=iplayer&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=iplayer&type=series&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# iplayer = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-iplayer = post['results']
+# iplayer.each do |bbc|
+#   Movie.create!(name: bbc['originalTitle'], description: bbc['overview'], imdb_rating: bbc['imdbRating'], image_url: bbc['posterURLs']['original'],banner_url: bbc['backdropURLs']['original'], release_date: bbc['year'], genre: bbc['genres'][1], video_url: bbc['streamingInfo']['iplayer']['gb']['link'], platform: "BBC iPlayer", trailer_url: bbc['video'], imdb_url: bbc['imdbID'])
+#   MoviePlatform.create!(platform: bbciplayer_platform, movie: Movie.last)
+# end
 
-iplayer.each do |bbc|
-  Movie.create!(name: bbc['originalTitle'], description: bbc['overview'], imdb_rating: bbc['imdbRating'], image_url: bbc['posterURLs']['original'],banner_url: bbc['backdropURLs']['original'], release_date: bbc['year'], genre: bbc['genres'][1], video_url: bbc['streamingInfo']['iplayer']['gb']['link'], platform: "BBC iPlayer", trailer_url: bbc['video'])
-  MoviePlatform.create!(platform: bbciplayer_platform, movie: Movie.last)
-end
+# ################# britbox #################
 
-################# britbox #################
+# url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=britbox&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=britbox&type=series&order_by=original_title&desc=true&language=en&output_language=en")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
+# request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
 
-request = Net::HTTP::Get.new(url)
-request["X-RapidAPI-Key"] = 'c2c95fa4d1mshbce08ebcc8b6ab0p197b68jsn270eb18d8709'
-request["X-RapidAPI-Host"] = 'streaming-availability.p.rapidapi.com'
+# response = http.request(request)
+# variable = response.read_body
+# post = JSON.parse(variable)
+# britboxs = post['results']
 
-response = http.request(request)
-variable = response.read_body
-post = JSON.parse(variable)
-britboxs = post['results']
-
-britboxs.each do |britbox|
-  Movie.create!(name: britbox['originalTitle'], description: britbox['overview'], imdb_rating: britbox['imdbRating'], image_url: britbox['posterURLs']['original'],banner_url: britbox['backdropURLs']['original'], release_date: britbox['year'], genre: britbox['genres'][1], video_url: britbox['streamingInfo']['britbox']['gb']['link'], platform: "britbox", trailer_url: britbox['video'])
-  MoviePlatform.create!(platform: britbox_platform, movie: Movie.last)
-end
+# britboxs.each do |britbox|
+#   Movie.create!(name: britbox['originalTitle'], description: britbox['overview'], imdb_rating: britbox['imdbRating'], image_url: britbox['posterURLs']['original'],banner_url: britbox['backdropURLs']['original'], release_date: britbox['year'], genre: britbox['genres'][1], video_url: britbox['streamingInfo']['britbox']['gb']['link'], platform: "britbox", trailer_url: britbox['video'], imdb_url: britbox['imdbID'])
+#   MoviePlatform.create!(platform: britbox_platform, movie: Movie.last)
+# end

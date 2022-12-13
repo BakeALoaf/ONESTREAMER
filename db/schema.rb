@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_13_112618) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_13_141856) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -85,6 +85,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_112618) do
     t.bigint "user_id"
     t.string "banner_url"
     t.string "trailer_url"
+    t.string "imdb_url"
     t.index ["favourite_movie_id"], name: "index_movies_on_favourite_movie_id"
     t.index ["user_id"], name: "index_movies_on_user_id"
   end

@@ -44,7 +44,7 @@
     </div>
 
     <div class="text_container">
-      <div class="description">
+      <div class="description" style="display: flex; text-align: justify; text-justify: inter-word;">
         <h6>
         <%= content_tag(:h, @movie.description, data: {
           share_target: "description"
@@ -53,14 +53,23 @@
       </div>
       <div class="movie_info">
           <div>
+          <a href="https://www.imdb.com/title/<%=@movie.imdb_url%>/?ref_=nv_sr_srsg_0" style="text-decoration: none; color: white;">
             <h6><i class="fa-brands fa-imdb"></i><%= @movie.imdb_rating %>/100</h6>
+          </a>
           </div>
           <h6><%= @movie.release_date %></h6>
       </div>
+    </div>
+    <% if @movie.trailer_url?%>
+      <div class="h1_youtube">
+        <h1>Watch the trailer</h1>
+      </div>
+    <% end %>
+    <div class="youtube" style="margin-bottom:10px;">
       <% if @movie.trailer_url?%>
-      <iframe width="330" height="315"
-        src="https://www.youtube.com/embed/<%=@movie.trailer_url%>">
-      </iframe>
+        <iframe width="330" height="315"
+          src="https://www.youtube.com/embed/<%=@movie.trailer_url%>">
+        </iframe>
       <% end %>
     </div>
   </div>
