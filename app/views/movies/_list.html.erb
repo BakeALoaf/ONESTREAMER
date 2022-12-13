@@ -1,0 +1,182 @@
+<div data-search-target="list">
+    <% if params[:query].present? %>
+
+        <div class="container">
+          <div class="app-wrappon">
+            <% @movies.each do |movie| %>
+              <a href='<%= movie_path(movie)%>' class="fav-card">
+                <img src="<%= movie.image_url %>" alt="img">
+              </a>
+            <% end %>
+        </div>
+</div>
+
+    <% else %>
+  <div class="movie-week">
+    <h1> Picks of the week</h1>
+  </div>
+
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-right: 20px; margin-left: 20px; height: 200px; border-radius: 6%;">
+    <div class="carousel-inner" style="border-radius: 2%; margin-top: 20px;">
+
+      <div class="carousel-item active">
+        <%= link_to movie_path(@random_movies[0]), class: 'title-week' do %>
+         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @random_movies[0].banner_url %>')">
+          <p><%= @random_movies[0].name %></p>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="carousel-item">
+        <%= link_to movie_path(@random_movies[1]), class: 'title-week' do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @random_movies[1].banner_url %>')">
+          <p><%= @random_movies[1].name %></p>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="carousel-item">
+        <%= link_to movie_path(@random_movies[2]), class: 'title-week' do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @random_movies[2].banner_url %>')">
+          <p><%= @random_movies[2].name %></p>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="carousel-item">
+        <%= link_to movie_path(@random_movies[3]), class: 'title-week' do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @random_movies[3].banner_url %>')">
+          <p><%= @random_movies[3].name %></p>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+<div class="app" style="margin-bottom: 75px; margin-top: 19px;">
+  <% if @movies.find { |movie| movie.platform == "Netflix"} %>
+    <h3>Netflix </h3>
+    <div class="scrolling-wrapper">
+      <% @movies.each do |movie| %>
+          <% if movie.platform == "Netflix" %>
+              <a href='<%= movie_path(movie)%>' class="movie-card">
+                <img src="<%= movie.image_url %>" alt="img">
+              </a>
+          <% end %>
+        <% end %>
+    </div>
+  <% end %>
+
+  <% if @movies.find { |movie| movie.platform == "Disney +"} %>
+    <h3>Disney +</h3>
+    <div class="scrolling-wrapper">
+      <% @movies.each do |movie| %>
+        <% if movie.platform == "Disney +" %>
+          <a href='<%= movie_path(movie)%>' class="movie-card">
+            <img src="<%= movie.image_url %>" alt="img">
+          </a>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+
+
+  <% if @movies.find { |movie| movie.platform == "Amazon Prime"} %>
+    <h3>Amazon Prime</h3>
+    <div class="scrolling-wrapper">
+      <% @movies.each do |movie| %>
+        <% if movie.platform == "Amazon Prime" %>
+              <a href='<%= movie_path(movie)%>' class="movie-card">
+                <img src="<%= movie.image_url %>" alt="img">
+              </a>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+      <% if @movies.find { |movie| movie.platform == "Apple TV"} %>
+        <h3>Apple TV</h3>
+      <div class="scrolling-wrapper">
+          <% @movies.each do |movie| %>
+              <% if movie.platform == "Apple TV" %>
+                    <a href='<%= movie_path(movie)%>' class="movie-card">
+                      <img src="<%= movie.image_url %>" alt="img">
+                    </a>
+              <% end %>
+            <% end %>
+      </div>
+      <% end %>
+
+
+      <% if @movies.find { |movie| movie.platform == "NOW TV"} %>
+        <h3>NOW TV</h3>
+      <div class="scrolling-wrapper">
+          <% @movies.each do |movie| %>
+              <% if movie.platform == "NOW TV" %>
+                    <a href='<%= movie_path(movie)%>' class="movie-card">
+                      <img src="<%= movie.image_url %>" alt="img">
+                    </a>
+              <% end %>
+            <% end %>
+      </div>
+      <% end %>
+
+
+      <% if @movies.find { |movie| movie.platform == "ALL 4"} %>
+        <h3>ALL 4</h3>
+      <div class="scrolling-wrapper">
+          <% @movies.each do |movie| %>
+              <% if movie.platform == "ALL 4" %>
+                    <a href='<%= movie_path(movie)%>' class="movie-card">
+                      <img src="<%= movie.image_url %>" alt="img">
+                    </a>
+              <% end %>
+            <% end %>
+      </div>
+      <% end %>
+
+      <% if @movies.find { |movie| movie.platform == "BBC iPlayer"} %>
+        <h3>BBC iPlayer</h3>
+       <div class="scrolling-wrapper">
+          <% @movies.each do |movie| %>
+              <% if movie.platform == "BBC iPlayer" %>
+                    <a href='<%= movie_path(movie)%>' class="movie-card">
+                      <img src="<%= movie.image_url %>" alt="img" style="height: 181px;">
+                    </a>
+              <% end %>
+            <% end %>
+      </div>
+      <% end %>
+
+      <% if @movies.find { |movie| movie.platform == "britbox"} %>
+        <h3>Britbox</h3>
+      <div class="scrolling-wrapper">
+        <% @movies.each do |movie| %>
+            <% if movie.platform == "britbox" %>
+                  <a href='<%= movie_path(movie)%>' class="movie-card">
+                    <img src="<%= movie.image_url %>" alt="img">
+                  </a>
+            <% end %>
+          <% end %>
+      </div>
+      <% end %>
+
+</div>
+
+
+
+
+
+    <% end %>
+</div>
