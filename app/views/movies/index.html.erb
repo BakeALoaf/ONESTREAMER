@@ -1,4 +1,4 @@
-<div data-controller="search">
+<div class="search-logo" data-controller="search">
   <%= form_with url: movies_path, method: :get, html: { class: "input-search search-box", data: {
   search_target: "form" } } do %>
   <button class="btn-search"><i class="fas fa-search"></i></button>
@@ -15,5 +15,6 @@
   <% end %>
   <%= image_tag"loggoooo.png", class:"logo" %>
 </div>
+
 
 <%= render 'list', movies: @movies %>
