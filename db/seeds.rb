@@ -74,7 +74,7 @@ post = JSON.parse(variable)
 netflixs = post['results']
 
 netflixs.each do |netflix|
-  Movie.create!(name: netflix['originalTitle'], description: netflix['overview'], imdb_rating: netflix['imdbRating'], image_url: netflix['posterURLs']['original'],banner_url: netflix['backdropURLs']['original'], release_date: netflix['year'], genre: netflix['genres'][1], video_url: netflix['streamingInfo']['netflix']['gb']['link'], platform: "Netflix")
+  Movie.create!(name: netflix['originalTitle'], description: netflix['overview'], imdb_rating: netflix['imdbRating'], image_url: netflix['posterURLs']['original'],banner_url: netflix['backdropURLs']['original'], release_date: netflix['year'], genre: netflix['genres'][1], video_url: netflix['streamingInfo']['netflix']['gb']['link'], platform: "Netflix", trailer_url: netflix['video'])
   MoviePlatform.create!(platform: netflix_platform, movie: Movie.last)
 end
 
@@ -96,7 +96,7 @@ post = JSON.parse(variable)
 primes = post['results']
 
 primes.each do |prime|
-  Movie.create!(name: prime['originalTitle'], description: prime['overview'], imdb_rating: prime['imdbRating'], image_url: prime['posterURLs']['original'],banner_url: prime['backdropURLs']['original'], release_date: prime['year'], genre: prime['genres'][1], video_url: prime['streamingInfo']['prime']['gb']['link'], platform: "Amazon Prime")
+  Movie.create!(name: prime['originalTitle'], description: prime['overview'], imdb_rating: prime['imdbRating'], image_url: prime['posterURLs']['original'],banner_url: prime['backdropURLs']['original'], release_date: prime['year'], genre: prime['genres'][1], video_url: prime['streamingInfo']['prime']['gb']['link'], platform: "Amazon Prime", trailer_url: prime['video'])
   MoviePlatform.create!(platform: amazonprime_platform, movie: Movie.last)
 end
 
@@ -118,7 +118,7 @@ post = JSON.parse(variable)
 disneys = post['results']
 
 disneys.each do |disney|
-  Movie.create!(name: disney['originalTitle'], description: disney['overview'], imdb_rating: disney['imdbRating'], image_url: disney['posterURLs']['original'],banner_url: disney['backdropURLs']['original'],release_date: disney['year'], genre: disney['genres'][1], video_url: disney['streamingInfo']['disney']['gb']['link'], platform: "Disney +")
+  Movie.create!(name: disney['originalTitle'], description: disney['overview'], imdb_rating: disney['imdbRating'], image_url: disney['posterURLs']['original'],banner_url: disney['backdropURLs']['original'],release_date: disney['year'], genre: disney['genres'][1], video_url: disney['streamingInfo']['disney']['gb']['link'], platform: "Disney +", trailer_url: disney['video'])
   MoviePlatform.create!(platform: disney_platform, movie: Movie.last)
 end
 
@@ -140,7 +140,7 @@ post = JSON.parse(variable)
 apples = post['results']
 
 apples.each do |apple|
-  Movie.create!(name: apple['originalTitle'], description: apple['overview'], imdb_rating: apple['imdbRating'], image_url: apple['posterURLs']['original'],banner_url: apple['backdropURLs']['original'], release_date: apple['year'], genre: apple['genres'][1], video_url: apple['streamingInfo']['apple']['gb']['link'], platform: "Apple TV")
+  Movie.create!(name: apple['originalTitle'], description: apple['overview'], imdb_rating: apple['imdbRating'], image_url: apple['posterURLs']['original'],banner_url: apple['backdropURLs']['original'], release_date: apple['year'], genre: apple['genres'][1], video_url: apple['streamingInfo']['apple']['gb']['link'], platform: "Apple TV", trailer_url: apple['video'])
   MoviePlatform.create!(platform: appletv_platform, movie: Movie.last)
 end
 
@@ -162,7 +162,7 @@ post = JSON.parse(variable)
 nows = post['results']
 
 nows.each do |now|
-  Movie.create!(name: now['originalTitle'], description: now['overview'], imdb_rating: now['imdbRating'], image_url: now['posterURLs']['original'],banner_url: now['backdropURLs']['original'], release_date: now['year'], genre: now['genres'][1], video_url: now['streamingInfo']['now']['gb']['link'], platform: "NOW TV")
+  Movie.create!(name: now['originalTitle'], description: now['overview'], imdb_rating: now['imdbRating'], image_url: now['posterURLs']['original'],banner_url: now['backdropURLs']['original'], release_date: now['year'], genre: now['genres'][1], video_url: now['streamingInfo']['now']['gb']['link'], platform: "NOW TV", trailer_url: now['video'])
   MoviePlatform.create!(platform: nowtv_platform, movie: Movie.last)
 end
 
@@ -184,7 +184,7 @@ post = JSON.parse(variable)
 allfour = post['results']
 
 allfour.each do |four|
-  Movie.create!(name: four['originalTitle'], description: four['overview'], imdb_rating: four['imdbRating'], image_url: four['posterURLs']['original'],banner_url: four['backdropURLs']['original'], release_date: four['year'], genre: four['genres'][1], video_url: four['streamingInfo']['all4']['gb']['link'], platform: "ALL 4")
+  Movie.create!(name: four['originalTitle'], description: four['overview'], imdb_rating: four['imdbRating'], image_url: four['posterURLs']['original'],banner_url: four['backdropURLs']['original'], release_date: four['year'], genre: four['genres'][1], video_url: four['streamingInfo']['all4']['gb']['link'], platform: "ALL 4", trailer_url: four['video'])
   MoviePlatform.create!(platform: all4_platform, movie: Movie.last)
 end
 
@@ -206,7 +206,7 @@ post = JSON.parse(variable)
 iplayer = post['results']
 
 iplayer.each do |bbc|
-  Movie.create!(name: bbc['originalTitle'], description: bbc['overview'], imdb_rating: bbc['imdbRating'], image_url: bbc['posterURLs']['original'],banner_url: bbc['backdropURLs']['original'], release_date: bbc['year'], genre: bbc['genres'][1], video_url: bbc['streamingInfo']['iplayer']['gb']['link'], platform: "BBC iPlayer")
+  Movie.create!(name: bbc['originalTitle'], description: bbc['overview'], imdb_rating: bbc['imdbRating'], image_url: bbc['posterURLs']['original'],banner_url: bbc['backdropURLs']['original'], release_date: bbc['year'], genre: bbc['genres'][1], video_url: bbc['streamingInfo']['iplayer']['gb']['link'], platform: "BBC iPlayer", trailer_url: bbc['video'])
   MoviePlatform.create!(platform: bbciplayer_platform, movie: Movie.last)
 end
 
@@ -228,7 +228,7 @@ post = JSON.parse(variable)
 britboxs = post['results']
 
 britboxs.each do |britbox|
-  Movie.create!(name: britbox['originalTitle'], description: britbox['overview'], imdb_rating: britbox['imdbRating'], image_url: britbox['posterURLs']['original'],banner_url: britbox['backdropURLs']['original'], release_date: britbox['year'], genre: britbox['genres'][1], video_url: britbox['streamingInfo']['britbox']['gb']['link'], platform: "britbox")
+  Movie.create!(name: britbox['originalTitle'], description: britbox['overview'], imdb_rating: britbox['imdbRating'], image_url: britbox['posterURLs']['original'],banner_url: britbox['backdropURLs']['original'], release_date: britbox['year'], genre: britbox['genres'][1], video_url: britbox['streamingInfo']['britbox']['gb']['link'], platform: "britbox", trailer_url: britbox['video'])
   MoviePlatform.create!(platform: britbox_platform, movie: Movie.last)
 end
 
@@ -250,7 +250,7 @@ post = JSON.parse(variable)
 netflixs = post['results']
 
 netflixs.each do |netflix|
-  Movie.create!(name: netflix['originalTitle'], description: netflix['overview'], imdb_rating: netflix['imdbRating'], image_url: netflix['posterURLs']['original'], banner_url: netflix['backdropURLs']['original'],release_date: netflix['year'], genre: netflix['genres'][1], video_url: netflix['streamingInfo']['netflix']['gb']['link'], platform: "Netflix")
+  Movie.create!(name: netflix['originalTitle'], description: netflix['overview'], imdb_rating: netflix['imdbRating'], image_url: netflix['posterURLs']['original'], banner_url: netflix['backdropURLs']['original'],release_date: netflix['year'], genre: netflix['genres'][1], video_url: netflix['streamingInfo']['netflix']['gb']['link'], platform: "Netflix", trailer_url: netflix['video'])
   MoviePlatform.create!(platform: netflix_platform, movie: Movie.last)
 end
 
@@ -272,7 +272,7 @@ post = JSON.parse(variable)
 primes = post['results']
 
 primes.each do |prime|
-  Movie.create!(name: prime['originalTitle'], description: prime['overview'], imdb_rating: prime['imdbRating'], image_url: prime['posterURLs']['original'],banner_url: prime['backdropURLs']['original'], release_date: prime['year'], genre: prime['genres'][1], video_url: prime['streamingInfo']['prime']['gb']['link'], platform: "Amazon Prime")
+  Movie.create!(name: prime['originalTitle'], description: prime['overview'], imdb_rating: prime['imdbRating'], image_url: prime['posterURLs']['original'],banner_url: prime['backdropURLs']['original'], release_date: prime['year'], genre: prime['genres'][1], video_url: prime['streamingInfo']['prime']['gb']['link'], platform: "Amazon Prime", trailer_url: prime['video'])
   MoviePlatform.create!(platform: amazonprime_platform, movie: Movie.last)
 end
 
@@ -294,7 +294,7 @@ post = JSON.parse(variable)
 disneys = post['results']
 
 disneys.each do |disney|
-  Movie.create!(name: disney['originalTitle'], description: disney['overview'], imdb_rating: disney['imdbRating'], image_url: disney['posterURLs']['original'],banner_url: disney['backdropURLs']['original'], release_date: disney['year'], genre: disney['genres'][1], video_url: disney['streamingInfo']['disney']['gb']['link'], platform: "Disney +")
+  Movie.create!(name: disney['originalTitle'], description: disney['overview'], imdb_rating: disney['imdbRating'], image_url: disney['posterURLs']['original'],banner_url: disney['backdropURLs']['original'], release_date: disney['year'], genre: disney['genres'][1], video_url: disney['streamingInfo']['disney']['gb']['link'], platform: "Disney +", trailer_url: disney['video'])
   MoviePlatform.create!(platform: disney_platform, movie: Movie.last)
 end
 
@@ -316,7 +316,7 @@ post = JSON.parse(variable)
 apples = post['results']
 
 apples.each do |apple|
-  Movie.create!(name: apple['originalTitle'], description: apple['overview'], imdb_rating: apple['imdbRating'], image_url: apple['posterURLs']['original'],banner_url: apple['backdropURLs']['original'], release_date: apple['year'], genre: apple['genres'][1], video_url: apple['streamingInfo']['apple']['gb']['link'], platform: "Apple TV")
+  Movie.create!(name: apple['originalTitle'], description: apple['overview'], imdb_rating: apple['imdbRating'], image_url: apple['posterURLs']['original'],banner_url: apple['backdropURLs']['original'], release_date: apple['year'], genre: apple['genres'][1], video_url: apple['streamingInfo']['apple']['gb']['link'], platform: "Apple TV", trailer_url: apple['video'])
   MoviePlatform.create!(platform: appletv_platform, movie: Movie.last)
 end
 
@@ -338,7 +338,7 @@ post = JSON.parse(variable)
 nows = post['results']
 
 nows.each do |now|
-  Movie.create!(name: now['originalTitle'], description: now['overview'], imdb_rating: now['imdbRating'], image_url: now['posterURLs']['original'],banner_url: now['backdropURLs']['original'], release_date: now['year'], genre: now['genres'][1], video_url: now['streamingInfo']['now']['gb']['link'], platform: "NOW TV")
+  Movie.create!(name: now['originalTitle'], description: now['overview'], imdb_rating: now['imdbRating'], image_url: now['posterURLs']['original'],banner_url: now['backdropURLs']['original'], release_date: now['year'], genre: now['genres'][1], video_url: now['streamingInfo']['now']['gb']['link'], platform: "NOW TV", trailer_url: now['video'])
   MoviePlatform.create!(platform: nowtv_platform, movie: Movie.last)
 end
 
@@ -360,7 +360,7 @@ post = JSON.parse(variable)
 allfour = post['results']
 
 allfour.each do |four|
-  Movie.create!(name: four['originalTitle'], description: four['overview'], imdb_rating: four['imdbRating'], image_url: four['posterURLs']['original'],banner_url: four['backdropURLs']['original'], release_date: four['year'], genre: four['genres'][1], video_url: four['streamingInfo']['all4']['gb']['link'], platform: "ALL 4")
+  Movie.create!(name: four['originalTitle'], description: four['overview'], imdb_rating: four['imdbRating'], image_url: four['posterURLs']['original'],banner_url: four['backdropURLs']['original'], release_date: four['year'], genre: four['genres'][1], video_url: four['streamingInfo']['all4']['gb']['link'], platform: "ALL 4", trailer_url: four['video'])
   MoviePlatform.create!(platform: all4_platform, movie: Movie.last)
 end
 
@@ -382,7 +382,7 @@ post = JSON.parse(variable)
 iplayer = post['results']
 
 iplayer.each do |bbc|
-  Movie.create!(name: bbc['originalTitle'], description: bbc['overview'], imdb_rating: bbc['imdbRating'], image_url: bbc['posterURLs']['original'],banner_url: bbc['backdropURLs']['original'], release_date: bbc['year'], genre: bbc['genres'][1], video_url: bbc['streamingInfo']['iplayer']['gb']['link'], platform: "BBC iPlayer")
+  Movie.create!(name: bbc['originalTitle'], description: bbc['overview'], imdb_rating: bbc['imdbRating'], image_url: bbc['posterURLs']['original'],banner_url: bbc['backdropURLs']['original'], release_date: bbc['year'], genre: bbc['genres'][1], video_url: bbc['streamingInfo']['iplayer']['gb']['link'], platform: "BBC iPlayer", trailer_url: bbc['video'])
   MoviePlatform.create!(platform: bbciplayer_platform, movie: Movie.last)
 end
 
@@ -404,6 +404,6 @@ post = JSON.parse(variable)
 britboxs = post['results']
 
 britboxs.each do |britbox|
-  Movie.create!(name: britbox['originalTitle'], description: britbox['overview'], imdb_rating: britbox['imdbRating'], image_url: britbox['posterURLs']['original'],banner_url: britbox['backdropURLs']['original'], release_date: britbox['year'], genre: britbox['genres'][1], video_url: britbox['streamingInfo']['britbox']['gb']['link'], platform: "britbox")
+  Movie.create!(name: britbox['originalTitle'], description: britbox['overview'], imdb_rating: britbox['imdbRating'], image_url: britbox['posterURLs']['original'],banner_url: britbox['backdropURLs']['original'], release_date: britbox['year'], genre: britbox['genres'][1], video_url: britbox['streamingInfo']['britbox']['gb']['link'], platform: "britbox", trailer_url: britbox['video'])
   MoviePlatform.create!(platform: britbox_platform, movie: Movie.last)
 end
