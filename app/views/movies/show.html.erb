@@ -51,15 +51,15 @@
         }) %>
         </h6>
       </div>
-
       <div class="movie_info">
           <div>
             <h6><i class="fa-brands fa-imdb"></i><%= @movie.imdb_rating %>/100</h6>
           </div>
           <h6><%= @movie.release_date %></h6>
       </div>
+      <iframe width="420" height="315"
+        src="https://www.youtube.com/embed/<%@movie.trailer_url%>">
+      </iframe>
     </div>
-
-
   </div>
 </div>
