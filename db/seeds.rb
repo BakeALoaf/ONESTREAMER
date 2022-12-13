@@ -58,7 +58,7 @@ britbox_platform.save
 
 ################# NETFLIX #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=netflix&type=movie&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=netflix&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -80,7 +80,7 @@ end
 
 ################# AMAZON #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=prime&type=movie&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=amazon&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -102,7 +102,7 @@ end
 
 ################# DISNEY #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=disney&type=movie&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=disney&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -124,7 +124,7 @@ end
 
 ################# APPLE #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=apple&type=movie&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=apple&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -146,7 +146,7 @@ end
 
 ################# NOW #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=now&type=movie&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=now&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -168,7 +168,7 @@ end
 
 ################# ALL 4 #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=all4&type=movie&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=all4&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -190,7 +190,7 @@ end
 
 ################# iplayer #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=iplayer&type=movie&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=iplayer&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -212,7 +212,7 @@ end
 
 ################# britbox #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=britbox&type=movie&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=britbox&type=movie&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -234,7 +234,7 @@ end
 
 ################# NETFLIX #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=netflix&type=series&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=netflix&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -256,7 +256,7 @@ end
 
 ################# AMAZON #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=prime&type=series&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=amazon&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -278,7 +278,7 @@ end
 
 ################# DISNEY #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=disney&type=series&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=disney&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -300,7 +300,7 @@ end
 
 ################# APPLE #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=apple&type=series&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=apple&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -322,7 +322,7 @@ end
 
 ################# NOW #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=now&type=series&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=now&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -344,7 +344,7 @@ end
 
 ################# ALL 4 #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=all4&type=series&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=all4&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -366,7 +366,7 @@ end
 
 ################# iplayer #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=iplayer&type=series&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=iplayer&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -388,7 +388,7 @@ end
 
 ################# britbox #################
 
-url = URI("https://streaming-availability.p.rapidapi.com/search/basic?country=gb&service=britbox&type=series&output_language=en&language=en")
+url = URI("https://streaming-availability.p.rapidapi.com/search/pro?country=gb&service=britbox&type=series&order_by=original_title&desc=true&language=en&output_language=en")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
