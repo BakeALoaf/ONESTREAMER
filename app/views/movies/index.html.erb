@@ -1,4 +1,4 @@
-<div>
+<div class="search-logo">
   <%= form_with url: movies_path, method: :get, class: "input-search search-box" do %>
   <button class="btn-search"><i class="fas fa-search"></i></button>
     <%= text_field_tag :query,
@@ -8,6 +8,7 @@
       onfocus: "this.value = ''",
       placeholder: "Find a movie" %>
   <% end %>
+  <%= image_tag"loggoooo.png", class:"logo" %>
 </div>
   <div class="movie-week"><h1> Picks of the week</h1></div>
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-right: 20px; margin-left: 20px; height: 200px; border-radius: 6%;">
