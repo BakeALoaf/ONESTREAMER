@@ -65,7 +65,7 @@
         <h1>Watch the trailer</h1>
       </div>
     <% end %>
-    <div class="youtube">
+    <div class="youtube" style="margin-bottom:10px;">
       <% if @movie.trailer_url?%>
         <iframe width="330" height="315"
           src="https://www.youtube.com/embed/<%=@movie.trailer_url%>">
