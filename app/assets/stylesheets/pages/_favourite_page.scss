@@ -1,10 +1,20 @@
 .app-wrappon {
   // display: flex;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  padding: 30px;
-  margin-bottom: 75px;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // grid-gap: 20px;
+  // padding: 30px;
+  // margin-bottom: 75px;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.fav-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  width: 79vw;
 }
 
 .favourite-header {
@@ -25,3 +35,45 @@
   object-fit: cover;
   border-radius: 2%;
 }
+
+.favourites {
+  a {
+    color: white;
+    margin-bottom: 15px;
+    text-decoration: none;
+  }
+}
+
+.image-wrap {
+  position: relative;
+  width: 145px;
+}
+
+.fav-page {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: radial-gradient(black, transparent);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+// .img-download {
+// position: relative;
+// }
+
+// .img-download > a {
+// position: absolute;
+// background: white;
+// bottom: 0;
+// left: 0;
+// }
+
+// .container { position: relative; }
+// .container img { display: block; }
+// .container .fa-download { position: absolute; top:0; left:0;
