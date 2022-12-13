@@ -32,7 +32,7 @@ class MoviesController < ApplicationController
 
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: 'movies/list', locals: { movies: @movies }, formats: [:html] }
+      format.text { render partial: 'list', locals: { movies: @movies }, formats: [:html] }
     end
 
   end

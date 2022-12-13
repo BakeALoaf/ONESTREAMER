@@ -1,20 +1,20 @@
-<div class="search-logo" data-controller="search">
-  <%= form_with url: movies_path, method: :get, html: { class: "input-search search-box", data: {
-  search_target: "form" } } do %>
-  <button class="btn-search"><i class="fas fa-search"></i></button>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "input-search",
-      autocomplete: "off",
-      onfocus: "this.value = ''",
-      placeholder: "Find something to watch...",
-      data: {
-        search_target: 'searchInput',
-        action: "keyup->search#update"
-        } %>
-  <% end %>
-  <%= image_tag"loggoooo.png", class:"logo" %>
-</div>
-
-
+<div data-controller="search">
+  <div class="search-logo">
+    <%= form_with url: movies_path, method: :get, html: { class: "input-search search-box", data: {
+    search_target: "form" } } do %>
+    <button class="btn-search"><i class="fas fa-search"></i></button>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "input-search",
+        autocomplete: "off",
+        onfocus: "this.value = ''",
+        placeholder: "Find something to watch...",
+        data: {
+          search_target: 'searchInput',
+          action: "keyup->search#update"
+          } %>
+    <% end %>
+    <%= image_tag"loggoooo.png", class:"logo" %>
+  </div>
 <%= render 'list', movies: @movies %>
+</div>
