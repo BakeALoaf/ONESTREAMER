@@ -105,4 +105,20 @@
   color: rgba(255, 255, 255, 0.998);
 }
 
+.youtube {
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: center;
+  width: 100vw;
+}
 
+.h1_youtube {
+  margin-top: -50px;
+  padding-left: 30px;
+}
+
+.youtube iframe {
+  margin-bottom: 70px;
+  width: 100%;
+}
