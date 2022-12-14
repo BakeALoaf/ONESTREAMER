@@ -13,7 +13,7 @@
 
     <% else %>
   <div class="movie-week">
-    <h1> Picks of the week</h1>
+    <h1>Recommended</h1>
   </div>
 
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-right: 20px; margin-left: 20px; height: 200px; border-radius: 6%;">
@@ -68,7 +68,7 @@
     <h3>Netflix </h3>
     <div class="scrolling-wrapper">
       <% @movies.each do |movie| %>
-          <% if movie.platform == "Netflix" %>
+          <% if movie.platform == "Netflix" && movie.image_url?%>
               <a href='<%= movie_path(movie)%>' class="movie-card">
                 <img src="<%= movie.image_url %>" alt="img">
               </a>
@@ -81,7 +81,7 @@
     <h3>Disney +</h3>
     <div class="scrolling-wrapper">
       <% @movies.each do |movie| %>
-        <% if movie.platform == "Disney +" %>
+        <% if movie.platform == "Disney +" && movie.image_url?%>
           <a href='<%= movie_path(movie)%>' class="movie-card">
             <img src="<%= movie.image_url %>" alt="img">
           </a>
@@ -96,7 +96,7 @@
     <h3>Amazon Prime</h3>
     <div class="scrolling-wrapper">
       <% @movies.each do |movie| %>
-        <% if movie.platform == "Amazon Prime" %>
+        <% if movie.platform == "Amazon Prime" && movie.image_url?%>
               <a href='<%= movie_path(movie)%>' class="movie-card">
                 <img src="<%= movie.image_url %>" alt="img">
               </a>
@@ -109,7 +109,7 @@
         <h3>Apple TV</h3>
       <div class="scrolling-wrapper">
           <% @movies.each do |movie| %>
-              <% if movie.platform == "Apple TV" %>
+              <% if movie.platform == "Apple TV" && movie.image_url?%>
                     <a href='<%= movie_path(movie)%>' class="movie-card">
                       <img src="<%= movie.image_url %>" alt="img">
                     </a>
@@ -123,7 +123,7 @@
         <h3>NOW TV</h3>
       <div class="scrolling-wrapper">
           <% @movies.each do |movie| %>
-              <% if movie.platform == "NOW TV" %>
+              <% if movie.platform == "NOW TV" && movie.image_url?%>
                     <a href='<%= movie_path(movie)%>' class="movie-card">
                       <img src="<%= movie.image_url %>" alt="img">
                     </a>
@@ -137,7 +137,7 @@
         <h3>ALL 4</h3>
       <div class="scrolling-wrapper">
           <% @movies.each do |movie| %>
-              <% if movie.platform == "ALL 4" %>
+              <% if movie.platform == "ALL 4" && movie.image_url?%>
                     <a href='<%= movie_path(movie)%>' class="movie-card">
                       <img src="<%= movie.image_url %>" alt="img">
                     </a>
@@ -150,7 +150,7 @@
         <h3>BBC iPlayer</h3>
        <div class="scrolling-wrapper">
           <% @movies.each do |movie| %>
-              <% if movie.platform == "BBC iPlayer" %>
+              <% if movie.platform == "BBC iPlayer" && movie.image_url?%>
                     <a href='<%= movie_path(movie)%>' class="movie-card">
                       <img src="<%= movie.image_url %>" alt="img" style="height: 181px;">
                     </a>
@@ -163,7 +163,7 @@
         <h3>Britbox</h3>
       <div class="scrolling-wrapper">
         <% @movies.each do |movie| %>
-            <% if movie.platform == "britbox" %>
+            <% if movie.platform == "britbox" && movie.image_url?%>
                   <a href='<%= movie_path(movie)%>' class="movie-card">
                     <img src="<%= movie.image_url %>" alt="img">
                   </a>
