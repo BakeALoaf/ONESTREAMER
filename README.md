@@ -1,1 +1,8 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Mobile app that aggregates titles of the various streaming services and presents it to the user in a clean and searchable interface. 
+
+Final project of Le Wagon Bootcamp, where my team of four developers used two weeks working on the app.
+
+Video presentation of the project here: https://www.youtube.com/watch?v=3kg23uRqbr8
+
+
+
