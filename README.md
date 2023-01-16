@@ -5,6 +5,6 @@ Final project of Le Wagon Bootcamp, where my team of four developers used two we
 Video presentation of the project here: https://www.youtube.com/watch?v=3kg23uRqbr8
 
 
-![index](images/Index.png)
-![show](images/Show.png)
-![favourites](images/Favourites.png)
+<img src="/root/code/Arnsel/ONESTREAMER/app/assets/images/Index.png" title="Index">
+<img src="/root/code/Arnsel/ONESTREAMER/app/assets/images/Show.png" title="Show">
+<img src="/root/code/Arnsel/ONESTREAMER/app/assets/images/Favourites.png" title="Favourites">
