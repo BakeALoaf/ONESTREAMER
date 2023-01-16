@@ -5,6 +5,6 @@ Final project of Le Wagon Bootcamp, where my team of four developers used two we
 Video presentation of the project here: https://www.youtube.com/watch?v=3kg23uRqbr8
 
 
-<img src="/root/code/Arnsel/ONESTREAMER/app/assets/images/Index.png" title="Index">
-<img src="/root/code/Arnsel/ONESTREAMER/app/assets/images/Show.png" title="Show">
+<img src="app/assets/images/Index.png" title="Index">
+<img src="app/assets/images/Show.png" title="Show">
 <img src="app/assets/images/Favourites.png" title="Favourites">
