@@ -8,3 +8,6 @@ class FavouritePlatformsController < ApplicationController
     redirect_to movies_path
   end
 end
+
+
+#this is a text
