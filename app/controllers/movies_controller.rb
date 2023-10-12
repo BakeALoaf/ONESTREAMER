@@ -34,7 +34,6 @@ class MoviesController < ApplicationController
       format.html # Follow regular flow of Rails
       format.text { render partial: 'list', locals: { movies: @movies }, formats: [:html] }
     end
-
   end
 
   def show
